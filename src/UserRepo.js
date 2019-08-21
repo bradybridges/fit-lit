@@ -1,11 +1,13 @@
+const User = require('../src/User');
+
 class UserRepo {
   constructor(data) {
-    this.users = data;
+    this.users = data.map(user => new User(user));
   }
 
   getUser(id) {
-    let user = this.users.filter(user => user.id === id);
-    return user[0];
+    let user = this.users.find(user => user.id === id);
+    return user;
   }
 
   calculateAverageStepGoal() {
@@ -13,7 +15,6 @@ class UserRepo {
       acc += user.dailyStepGoal;
       return acc;
     }, 0);
-
     return totalSteps / this.users.length;
   }
 
