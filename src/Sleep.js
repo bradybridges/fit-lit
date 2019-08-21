@@ -8,7 +8,7 @@ class Sleep {
       acc += sleepObj.hoursSlept;
       return acc;
     }, 0);
-    return sleepTotal / this.sleepData.length;
+    return sleepTotal / this.sleepData.length;  
   }
 
   calculateAverageSleepQuality() {

@@ -20,6 +20,12 @@ class SleepRepo {
   getUserData(userID) {
     return this.sleepData.filter(sleeper => sleeper.userID === userID);
   }
+
+  // usersAvgSleepQualityGreaterThree(date) {
+  //   const weekData = this.sleepData.reduce((acc, sleeper, index) => {
+  //     if()
+  //   }, []);
+  // }
 }
 
 if (typeof module !== 'undefined') {
