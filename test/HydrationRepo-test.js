@@ -4,8 +4,16 @@ const hydrationData = require('../data/mockHydration');
 const HydrationRepo = require('../src/HydrationRepo.js');
 
 describe('HydrationRepo', () => {
+
+  let hydrationRepo;
+
+  beforeEach(() => {
+    hydrationRepo = new HydrationRepo(hydrationData);
+  })
+  
   it('should be able to return specific users hydration data', () => {
-    const hydrationRepo = new HydrationRepo(hydrationData);
-    expect(hydrationRepo.getUserHydrationData(1)).to.deep.equal(hydrationData.filter(hydration => hydration.userID === 1));
+    
+    expect(hydrationRepo.getUserHydrationData(1).length).to.equal(7);
   })
 })
+
