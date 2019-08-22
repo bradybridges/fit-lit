@@ -10,30 +10,30 @@ describe('Sleep', () => {
   let sleepRepo, userSleep, sleeper, date;
 
   beforeEach(() => {
-    sleepRepo = new SleepRepo(sleepData);
-    sleeper = new Sleep(sleepData2);
-    userSleep = new Sleep(sleepRepo.getUserData(1));
+    sleepRepo = new SleepRepo(sleepData2);
+    sleeper = new Sleep(sleepRepo.getUserData(1));
+    // userSleep = new Sleep(sleepRepo.getUserData(1));
     date = '2019/07/15';
   })
 
   it('should be able to calc average hours slept for user', () => {
    
-    expect(userSleep.calculateAverageHoursSlept()).to.equal(6.1);
+    expect(sleeper.calculateAverageHoursSlept()).to.equal(5);
   });  
 
   it('should be able to calc average sleep quality for user', () => {
     
-    expect(userSleep.calculateAverageSleepQuality()).to.equal(2.2);
+    expect(sleeper.calculateAverageSleepQuality()).to.equal(5);
   });
 
   it('should be able to find hours slept on particular day', () => {
-   
-    expect(userSleep.getHoursSlept('2019/06/15')).to.equal(6.1);
+  
+    expect(sleeper.getHoursSlept(date)).to.equal(8);
   });
 
   it('should be able to find quality of sleep on particular day', () => {
  
-    expect(userSleep.getQuality('2019/06/15')).to.equal(2.2);
+    expect(sleeper.getQuality(date)).to.equal(8);
   });
 
   it('should be able to return hours slept for a given week', () => {
@@ -45,4 +45,4 @@ describe('Sleep', () => {
 
     expect(sleeper.getSleepQualityForWeek(date)).to.deep.equal([2,3,4,5,6,7,8]);
   });
-});
+});    
