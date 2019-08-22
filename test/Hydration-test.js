@@ -16,7 +16,7 @@ describe('Hydration', () => {
 
   it('should be able to calculate avg ounces consumed for all time', () => {
     
-    expect(hydration.getAverageFluidOunces()).to.equal(35);
+    expect(hydration.getAverageFluidOunces()).to.equal(33);
   });
 
   it('should be able to find ounces consumed on specific date' , () => {
@@ -26,6 +26,6 @@ describe('Hydration', () => {
 
   it('should be able to find average ounces for a given week', () => {
 
-    expect(hydration.getFluidOuncesForWeek(date)).to.deep.equal([30,30,40,40,30,40,30]);
+    expect(hydration.getFluidOuncesForWeek(date)).to.deep.equal([30,40,30,40,30,40,30]);
   });
 })
