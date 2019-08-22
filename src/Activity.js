@@ -2,7 +2,7 @@ class Activity {
   constructor(userActivity, user) {
     this.userActivity = userActivity;
     this.user = user;
-  }
+  }. 
 
   getMilesWalked(date) {
     let steps = this.userActivity.find(data => data.date === date).numSteps;
