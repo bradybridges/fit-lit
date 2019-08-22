@@ -179,7 +179,7 @@ const mockActivity = [
     "date": "2019/07/13",
     "numSteps": 13000,
     "minutesActive": 240,
-    "flightsOfStairs": 26
+    "flightsOfStairs": 36
   },
   {
     "userID": 2,
@@ -284,7 +284,7 @@ const mockActivity = [
     "date": "2019/07/16",
     "numSteps": 7500,
     "minutesActive": 140,
-    "flightsOfStairs": 26
+    "flightsOfStairs": 16
   },
   {
     "userID": 2,

@@ -24,5 +24,25 @@ describe('Activity', () => {
     expect(userActivity.getMilesWalked(date)).to.equal(5.95)
   })
 
+  it('should return a user\'s min active for date', () => {
+    expect(userActivity.getMinutesActive(date)).to.equal(140);
+  })
+
+  it('should return user\'s avg min active for week given date', () => {
+    expect(userActivity.getWeekAvgMinActive(date)).to.equal(162.86);
+  })
+
+  it('should check if user reached step goal on given date', () => {
+    expect(userActivity.checkStepGoal(date)).to.equal('You didn\'t take enough steps to reach your goal for today');
+  })
+
+  it('should return all days user reached their step goal', () => {
+    expect(userActivity.getDaysStepGoalReached().length).to.equal(2);
+  })
+
+  it('should return user\'s stair record', () => {
+    expect(userActivity.getUserStairRecord()).to.equal(36)
+  })
+
 
 })
