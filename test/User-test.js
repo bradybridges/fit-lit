@@ -10,10 +10,9 @@ describe('User', () => {
   beforeEach(() => {
     user = new User(data[0])
   })
+
   it('should be able to return first name of the user', () => {
     expect(user.getFirstName()).to.equal('Luisa');
   });
   
 });
-
-// we want to have a parameter set up to pass an argument of the user ID to return the user to get their name
