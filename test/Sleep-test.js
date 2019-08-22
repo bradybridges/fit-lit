@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const sleepData = require('../data/mockSleep');
-const sleepData2 = require('../data/mockSleep2');
+
 const SleepRepo = require('../src/SleepRepo');
 const Sleep = require('../src/Sleep');
  
@@ -10,11 +10,11 @@ describe('Sleep', () => {
   let sleepRepo, userSleep, sleeper, date;
 
   beforeEach(() => {
-    sleepRepo = new SleepRepo(sleepData2);
+    sleepRepo = new SleepRepo(sleepData);
     sleeper = new Sleep(sleepRepo.getUserData(1));
-    // userSleep = new Sleep(sleepRepo.getUserData(1));
+    
     date = '2019/07/15';
-  })
+  });
 
   it('should be able to calc average hours slept for user', () => {
    
