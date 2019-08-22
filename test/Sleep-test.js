@@ -4,7 +4,7 @@ const sleepData = require('../data/mockSleep');
 const sleepData2 = require('../data/mockSleep2');
 const SleepRepo = require('../src/SleepRepo');
 const Sleep = require('../src/Sleep');
-
+ 
 describe('Sleep', () => {
 
   let sleepRepo, userSleep, date;

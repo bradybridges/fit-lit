@@ -1,4 +1,4 @@
-const userData = [
+const userData = [ 
   {
     "id": 1,
     "name": "Luisa Hane",
@@ -8,7 +8,7 @@ const userData = [
     "dailyStepGoal": 10000,
     "friends": [
       16,
-      4,
+      4, 
       8
     ]
   },

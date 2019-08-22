@@ -4,7 +4,7 @@ const expect = chai.expect;
 const activityData = require('../data/mockActivity');
 const ActivityRepo = require('../src/ActivityRepo');
 
-describe('Activity', () => {
+describe('ActivityRepo', () => {
 
   let activityRepo, date;
 
@@ -13,9 +13,8 @@ describe('Activity', () => {
     date = '2019/07/15';
   })
 
-  it('should   ', () => {
-
-    
+  it('should return user activity given id', () => {
+    expect(activityRepo.getUserActivity(1).length).to.equal(9);
   })
 
 
