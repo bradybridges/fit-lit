@@ -35,7 +35,7 @@ class Sleep {
       }
       return acc;
     }, []);
-    return sleepHours;
+    return sleepHours;  
   }
 
   getSleepQualityForWeek(date) {
@@ -47,7 +47,7 @@ class Sleep {
       return acc;
     }, []);
     return sleepQualities;
-  }
+  } 
 
 }
 

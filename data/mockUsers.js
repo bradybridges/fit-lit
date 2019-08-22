@@ -9,7 +9,7 @@ const userData = [
     "friends": [
       16,
       4, 
-      8
+      8 
     ]
   },
   {
