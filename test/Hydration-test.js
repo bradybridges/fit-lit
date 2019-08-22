@@ -21,11 +21,11 @@ describe('Hydration', () => {
 
   it('should be able to find ounces consumed on specific date' , () => {
   
-    expect(hydration.getFluidOuncesOnDay(date)).to.equal(40);
+    expect(hydration.getFluidOuncesOnDay(date)).to.equal(30);
   });
 
-  // it('should be able to find average ounces for a given week', () => {
-// fix sample data then fix test
-  //   expect(hydration.getFluidOuncesForWeek(date)).to.deep.equal([30,40,40,30,40,30,40]);
-  // });
+  it('should be able to find average ounces for a given week', () => {
+
+    expect(hydration.getFluidOuncesForWeek(date)).to.deep.equal([30,30,40,40,30,40,30]);
+  });
 })
