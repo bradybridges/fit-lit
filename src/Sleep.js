@@ -36,7 +36,7 @@ class Sleep {
       return acc;
     }, []);
     return sleepHours;  
-  }
+  } 
 
   getSleepQualityForWeek(date) {
     const startIndex = this.sleepData.findIndex(sleepObj => sleepObj.date === date) - 6;

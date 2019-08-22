@@ -1,7 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
 const data = require('../data/mockUsers');
-// const users = data.userData;
 const UserRepo = require('../src/UserRepo');
 
 
