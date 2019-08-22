@@ -13,7 +13,7 @@ describe('HydrationRepo', () => {
   
   it('should be able to return specific users hydration data', () => {
     
-    expect(hydrationRepo.getUserHydrationData(1).length).to.equal(7);
+    expect(hydrationRepo.getUserHydrationData(1).length).to.equal(9);
   })
 })
 
