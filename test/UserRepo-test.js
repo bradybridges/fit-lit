@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const data = require('../data/mockUsers');
-const users = data.userData;
+// const users = data.userData;
 const UserRepo = require('../src/UserRepo');
 
 
@@ -17,7 +17,7 @@ describe('UserRepo', () => {
     expect(users.users.length).to.equal(5);
   });
 
-  it('should be able to find a user based on id', () => {
+  it('should find a user given id', () => {
   
     expect(users.getUser(1).name).to.deep.equal('Luisa Hane');
   });

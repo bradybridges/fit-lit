@@ -1,13 +1,10 @@
-const User = require('../src/User');
-
 class UserRepo {
-  constructor(data) {
-    this.users = data.map(user => new User(user));
+  constructor(users) {
+    this.users = users;
   }
 
   getUser(id) {
-    let user = this.users.find(user => user.id === id);
-    return user;
+    return this.users.find(user => user.id === id);
   }
 
   calculateAverageStepGoal() {
