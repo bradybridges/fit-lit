@@ -7,7 +7,8 @@ class SleepRepo {
   calculateAverageSleepQuality() {
     let sleepQualities = this.sleepData.map(sleepObj => sleepObj.sleepQuality);
 
-    return sleepQualities.reduce((acc, sleepQuality) => acc += sleepQuality, 0) / sleepQualities.length;
+    let average = sleepQualities.reduce((acc, sleepQuality) => acc += sleepQuality, 0) / sleepQualities.length;
+    return +average.toFixed(2);
   } 
 
   findUsersWithMostSleep(date) {

@@ -16,12 +16,12 @@ describe('SleepRepo', () => {
   
   it('should be able to find average sleep quality of users', () => {
     
-    expect(sleepRepo.calculateAverageSleepQuality()).to.equal(5);
+    expect(sleepRepo.calculateAverageSleepQuality()).to.equal(3.87);
   });
 
   it('should be able to find the users with most hours slept on a date', () => {
    
-    expect(sleepRepo.findUsersWithMostSleep(date).length).to.equal(1);
+    expect(sleepRepo.findUsersWithMostSleep(date).length).to.equal(2);
   });
 
   it('should be able to return a users sleep data based on ID', () => {
@@ -31,7 +31,6 @@ describe('SleepRepo', () => {
 
   it('should return all users with sleep quality greater than 3 given week', () => {
     let sleepers = sleepRepo.usersAvgSleepQualityGreaterThree(date);
-    // console.log(sleepers);
-    expect(sleepers.length).to.equal(5);
+    expect(sleepers.length).to.equal(4);
   })
 })
