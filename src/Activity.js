@@ -13,6 +13,14 @@ class Activity {
     return this.userActivity.find(data => data.date === date).minutesActive;
   }
 
+  getStepsTaken(date) {
+    return this.userActivity.find(data => data.date === date).numSteps;
+  }
+
+  getFlightsOfStairs(date) {
+    return this.userActivity.find(data => data.date === date).flightsOfStairs;
+  }
+
   getWeekAvgMinActive(date) {
     const selectedDay = this.userActivity.findIndex(data => data.date === date);
     const firstDay = selectedDay - 6;

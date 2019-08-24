@@ -148,5 +148,103 @@ $(document).ready(() =>{
     }
   });
 
+  const compareStepsChart = new Chart($('#step-chart'), {
+    type: 'horizontalBar',
+    data: {
+      labels: ['You', 'User Average'],
+      datasets: [{
+        label: 'Steps Taken Today',
+        data: [activity.getStepsTaken(date), activityRepo.getAvgStepsAllUsers(date)],
+        backgroundColor: [
+          'blue',
+          'orange'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+const compareMinutesChart = new Chart($('#minutes-chart'), {
+    type: 'horizontalBar',
+    data: {
+      labels: ['You', 'User Average'],
+      datasets: [{
+        label: 'Minutes Active Today',
+        data: [activity.getMinutesActive(date), activityRepo.getAvgMinActiveAllUsers(date)],
+        backgroundColor: [
+          'blue',
+          'orange'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+const compareStairsChart = new Chart($('#stairs-chart'), {
+    type: 'horizontalBar',
+    data: {
+      labels: ['You', 'User Average', 'Your Record'],
+      datasets: [{
+        label: 'Flights of Stairs Climbed Today',
+        data: [activity.getFlightsOfStairs(date), activityRepo.getAvgStairsAllUsers(date), activity.getUserStairRecord()],
+        backgroundColor: [
+          'blue',
+          'orange',
+          'blue'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+
+
+
+
 });
 
