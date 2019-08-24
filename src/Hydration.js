@@ -21,7 +21,7 @@ class Hydration {
     
     return this.hydrationData.reduce((acc, hydration, index) => {
       if(index >= startIndex && index <= startIndex + 6) {
-        acc.push(hydration.numOunces);
+        acc.push({['x']: hydration.date, ['y']: hydration.numOunces});
       }
       return acc;
     }, []);

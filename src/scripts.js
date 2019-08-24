@@ -112,4 +112,41 @@ $(document).ready(() =>{
   //activity
   $('#miles').text(getMilesWalkedToday());
 
+  const weeklyHydrationChart = new Chart($('#water-week-chart'), {
+    type: 'line',
+    data: {
+      labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+      datasets: [{
+        label: 'Weekly Hydration',
+        data: hydration.getFluidOuncesForWeek(date),
+        backgroundColor: [
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
 });
+
