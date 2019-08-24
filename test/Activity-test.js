@@ -29,7 +29,11 @@ describe('Activity', () => {
   })
 
   it('should return user\'s steps taken for date', () => {
-    expect(userActivity.getStepsTaken(date)).to.equal(7300)
+    expect(userActivity.getStepsTaken(date)).to.equal(7300);
+  })
+
+  it('should return user\'s stairs climbed for date', () => {
+    expect(userActivity.getFlightsOfStairs(date)).to.equal(26);
   })
 
   it('should return user\'s avg min active for week given date', () => {
