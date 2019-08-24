@@ -3,7 +3,7 @@ class ActivityRepo {
     this.activityData = activityData;
     this.users = users;
   } 
-
+  
   getUserActivity(id) {
     return this.activityData.filter(data => data.userID === id);
   }

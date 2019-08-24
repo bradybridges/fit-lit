@@ -28,6 +28,10 @@ describe('Activity', () => {
     expect(userActivity.getMinutesActive(date)).to.equal(140);
   })
 
+  it('should return user\'s steps taken for date', () => {
+    expect(userActivity.getStepsTaken(date)).to.equal(7300)
+  })
+
   it('should return user\'s avg min active for week given date', () => {
     expect(userActivity.getWeekAvgMinActive(date)).to.equal(162.86);
   })

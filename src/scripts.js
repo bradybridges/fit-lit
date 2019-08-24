@@ -148,5 +148,36 @@ $(document).ready(() =>{
     }
   });
 
+  const compareStepsChart = new Chart($('#step-chart'), {
+    type: 'horizontalBar',
+    data: {
+      labels: ['You', 'User Average'],
+      datasets: [{
+        label: 'Steps Taken Today',
+        data: [activity.getStepsTaken(date), activityRepo.getAvgStepsAllUsers(date)],
+        backgroundColor: [
+          'blue',
+          'orange'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
 });
 
