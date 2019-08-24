@@ -115,7 +115,7 @@ $(document).ready(() =>{
   const weeklyHydrationChart = new Chart($('#water-week-chart'), {
     type: 'line',
     data: {
-      labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Da', '6 Days'],
+      labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
       datasets: [{
         label: 'Weekly Hydration',
         data: hydration.getFluidOuncesForWeek(date),
