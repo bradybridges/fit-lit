@@ -14,6 +14,11 @@ $(document).ready(() =>{
   activity = new Activity(activityRepo.getUserActivity(id), userRepo.getUser(id));
 
   //functions
+  //header
+  const getFirstName = () => {
+    return user.getFirstName();
+  }
+
   //user details fns
   const getUserID = () => {
     return user.id;
@@ -85,7 +90,7 @@ $(document).ready(() =>{
   }
 
   //header
-  $('#first-name').text(user.getFirstName());
+  $('#first-name').text(getFirstName());
   $('#date').text(date);
 
   //main
