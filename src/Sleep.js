@@ -36,7 +36,7 @@ class Sleep {
     const startIndex = this.sleepData.findIndex(sleepObj => sleepObj.date === date) - 6;
     const sleepHours = this.sleepData.reduce((acc, sleepObj, index) => {
       if(index >= startIndex && index <= startIndex + 6) {
-        acc.push(sleepObj.hoursSlept);
+        acc.push({['x']: sleepObj.date, ['y']: sleepObj.hoursSlept});
       }
       return acc;
     }, []);
@@ -47,7 +47,7 @@ class Sleep {
     const startIndex = this.sleepData.findIndex(sleepObj => sleepObj.date === date) - 6;
     const sleepQualities = this.sleepData.reduce((acc, sleepObj, index) => {
       if(index >= startIndex && index <= startIndex + 6) {
-        acc.push(sleepObj.sleepQuality);
+        acc.push({['x']: sleepObj.date, ['y']: sleepObj.sleepQuality});
       }
       return acc;
     }, []);

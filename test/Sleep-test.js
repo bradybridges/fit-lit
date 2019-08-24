@@ -38,12 +38,12 @@ describe('Sleep', () => {
 
   it('should be able to return hours slept for a given week', () => {
 
-    expect(sleeper.getSleepHoursForWeek(date)).to.deep.equal([7,3,11,5,7,7,8]);
+    expect(sleeper.getSleepHoursForWeek(date).length).to.deep.equal(7);
   });
 
   it('should be able to return sleep quality for given week', () =>{
 
-    expect(sleeper.getSleepQualityForWeek(date)).to.deep.equal([5,4,4,5,6,7,8]);
+    expect(sleeper.getSleepQualityForWeek(date).length).to.deep.equal(7);
   });
 
   it('should be able to return sleep score for a given day', () => {

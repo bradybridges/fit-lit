@@ -103,21 +103,13 @@ $(document).ready(() =>{
   $('#water-today').text(getWaterToday());
   $('#water-average').text(getAverageWaterConsumtion());
 
-  //sleep
-  $('#hours-sleep').text(getHoursSlept());
-  $('#avg-hours').text(getAvgHoursSlept());
-  $('#quality-sleep').text(getSleepQuality());
-  $('#avg-quality').text(getAvgSleepQuality());
-
-  //activity
-  $('#miles').text(getMilesWalkedToday());
-
+  //hydration charts
   const weeklyHydrationChart = new Chart($('#water-week-chart'), {
     type: 'line',
     data: {
       labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
       datasets: [{
-        label: 'Weekly Hydration',
+        label: 'Weekly Sleep Quality',
         data: hydration.getFluidOuncesForWeek(date),
         backgroundColor: [
           'rgba(148, 152, 152, .74)',
@@ -148,6 +140,89 @@ $(document).ready(() =>{
     }
   });
 
+  //sleep
+  $('#hours-sleep').text(getHoursSlept());
+  $('#avg-hours').text(getAvgHoursSlept());
+  $('#quality-sleep').text(getSleepQuality());
+  $('#avg-quality').text(getAvgSleepQuality());
+
+  //sleep charts
+  const weeklyHoursSleepChart = new Chart($('#hours-sleep-week-chart'), {
+    type: 'line',
+    data: {
+      labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+      datasets: [{
+        label: 'Weekly Hours Of Sleep',
+        data: sleep.getSleepHoursForWeek(date),
+        backgroundColor: [
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+  const weeklySleepQualityChart = new Chart($('#sleep-quality-week-chart'), {
+    type: 'line',
+    data: {
+      labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+      datasets: [{
+        label: 'Weekly Hydration',
+        data: sleep.getSleepQualityForWeek(date),
+        backgroundColor: [
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+  //activity
+  $('#miles').text(getMilesWalkedToday());
+
+  //activity charts
   const compareStepsChart = new Chart($('#step-chart'), {
     type: 'horizontalBar',
     data: {
@@ -241,10 +316,6 @@ const compareStairsChart = new Chart($('#stairs-chart'), {
       }
     }
   });
-
-
-
-
-
+  console.log(activity.getFlightsOfStairs(date));
 });
 
