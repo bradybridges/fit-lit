@@ -21,14 +21,46 @@
         <p>Stride Length: <span id="stride"></span></p>
         <p>Daily Step Goal: <span id="step-goal"></span></p>
         <p>Average Step Goal for all Users: <span id="step-goal-avg"></span></p>
-        <p>Friends: <span id="friends"></span></p>
+        <p>Friends:</p>
+        <ul id="friends"></ul>
+      </section>
+      <section id="hydration">
+        <h3>Hydration:</h3>
+        <p>Water Consumed Today: <span id="water-today"></span></p>
+        <p>Average Daily Water Consumption: <span id="water-average"></span></p>
+        <p>Water Consumed Over the Last Week:</p>
+        <!-- chart  id="water-week" -->
+
+      </section>
+      <section id="sleep">
+        <h3>Sleep:</h3>
+        <p>Hours Slept: <span id="hours-sleep"></span></p>
+        <p>Average Amount of Sleep: <span id="avg-hours"></span></p>
+        <p>Hours Slept Over the Last Week:</p>
+        <!-- chart id="hours-week" -->
+        <p>Sleep Quality: <span id="quality-sleep"></span></p>
+        <p>Average Sleep Quality: <span id="avg-quality"></span></p>
+        <p>Sleep Quality Over the Last Week:</p>
+        <!-- chart id="quality-week" -->
+      </section>
+      <section id="activity">
+        <h3>Activity:</h3>
+        <p>Distance Walked Today: <span id="miles"></span> miles</p>
+        <!-- each of these are supposed to be compared so I was thinking of doing 3 differnt simple bar charts to show the user's day info vs all users average -->
+        <p id="step-goal-reached"></p>
+        <p>Steps Taken Today: <span id="steps-today"></span></p>
+        <p>Average Steps Taken for All Users: <span id="avg-steps-all"></span></p>
+        <p>Minutes Active Today: <span id="minutes-today"></span></p>
+        <p>Average Minutes Active for All Users: <span id="avg-minutes-all"></span></p>
+        <p>Stairs Climbed Today: <span id="stairs-today"></span></p>
+        <p>Average Stairs Climbed for All Users: <span id="avg-stairs-all"></span></p>
+        <p>Your All-Time Stair Climbing Record: <span id="stair-record"></span></p>
+        <!-- chart to display each weekly step, minutes, stair -->
+        <!-- this info was not in the required methods so I am thinking I can create them to make 3 different charts -->
       </section>
 
 
     </main>
-
-
-
 
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="../data/hydration.js"></script>
