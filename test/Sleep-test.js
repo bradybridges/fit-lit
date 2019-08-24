@@ -18,12 +18,12 @@ describe('Sleep', () => {
 
   it('should be able to calc average hours slept for user', () => {
    
-    expect(sleeper.calculateAverageHoursSlept()).to.equal(5);
+    expect(sleeper.calculateAverageHoursSlept()).to.equal(5.78);
   });  
 
   it('should be able to calc average sleep quality for user', () => {
     
-    expect(sleeper.calculateAverageSleepQuality()).to.equal(5);
+    expect(sleeper.calculateAverageSleepQuality()).to.equal(5.33);
   });
 
   it('should be able to find hours slept on particular day', () => {
@@ -38,11 +38,15 @@ describe('Sleep', () => {
 
   it('should be able to return hours slept for a given week', () => {
 
-    expect(sleeper.getSleepHoursForWeek(date)).to.deep.equal([2,3,4,5,6,7,8]);
+    expect(sleeper.getSleepHoursForWeek(date)).to.deep.equal([7,3,11,5,7,7,8]);
   });
 
   it('should be able to return sleep quality for given week', () =>{
 
-    expect(sleeper.getSleepQualityForWeek(date)).to.deep.equal([2,3,4,5,6,7,8]);
+    expect(sleeper.getSleepQualityForWeek(date)).to.deep.equal([5,4,4,5,6,7,8]);
+  });
+
+  it('should be able to return sleep score for a given day', () => {
+    expect(sleeper.getSleepScore(date)).to.equal(64);
   });
 });    

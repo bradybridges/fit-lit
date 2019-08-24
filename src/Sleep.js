@@ -8,7 +8,7 @@ class Sleep {
       acc += sleepObj.hoursSlept;
       return acc;
     }, 0);
-    return sleepTotal / this.sleepData.length;  
+    return  +(sleepTotal / this.sleepData.length).toFixed(2);  
   }
 
   calculateAverageSleepQuality() {
@@ -16,7 +16,7 @@ class Sleep {
       acc += sleepObj.sleepQuality;
       return acc;
     }, 0);
-    return qualityTotal / this.sleepData.length;
+    return +(qualityTotal / this.sleepData.length).toFixed(2);
   }
 
   getHoursSlept(date) {
@@ -25,6 +25,11 @@ class Sleep {
 
   getQuality(date) {
     return this.sleepData.find(sleepObj => sleepObj.date === date).sleepQuality;
+  }
+
+  getSleepScore(date) {
+    const sleep = this.sleepData.find(sleepObj => sleepObj.date === date);
+    return sleep.hoursSlept * sleep.sleepQuality;
   }
 
   getSleepHoursForWeek(date) {
