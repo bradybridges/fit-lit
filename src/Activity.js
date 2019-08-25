@@ -59,7 +59,6 @@ class Activity {
     }, 0);
   }
 
-
 }
 
 if (typeof module !== 'undefined') {
