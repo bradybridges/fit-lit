@@ -1,8 +1,9 @@
 $(document).ready(() =>{
  
-  let user, userRepo, hydration, hydrationRepo, sleep, sleepRepo, activity, activityRepo, date, id;
+  let user, userRepo, hydration, hydrationRepo, sleep, sleepRepo, activity, activityRepo, date, id, today;
 
   id = 22;
+  today = new Date().toString().split(' ').slice(0,4).join(' ');
   date = new Date().toISOString().replace('-', '/').split('T')[0].replace('-', '/');
   userRepo = new UserRepo(userData);
   hydrationRepo = new HydrationRepo(hydrationData);
@@ -86,7 +87,7 @@ $(document).ready(() =>{
 
   //header
   $('#first-name').text(user.getFirstName());
-  $('#date').text(date);
+  $('#date').text(today);
 
   //main
   //user details
@@ -221,6 +222,7 @@ $(document).ready(() =>{
 
   //activity
   $('#miles').text(getMilesWalkedToday());
+  $('#step-goal-reached').text(activity.checkStepGoal(date));
 
   //activity charts
   const compareStepsChart = new Chart($('#step-chart'), {
