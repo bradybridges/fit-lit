@@ -52,5 +52,9 @@ describe('Activity', () => {
     expect(userActivity.getUserStairRecord()).to.equal(36)
   })
 
+  it('should return friends of user', () => {
+    expect(userActivity.getFriends().length).to.equal(3);
+  })
+
 
 })

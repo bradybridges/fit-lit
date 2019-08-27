@@ -59,6 +59,10 @@ class Activity {
     }, 0);
   }
 
+  getFriends() {
+    return this.user.friends;
+  }
+
 }
 
 if (typeof module !== 'undefined') {
