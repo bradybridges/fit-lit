@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+}
+
+#profile-img {
+  height: 50px;
+  width: 50px;
+}
+
+#hydration, #sleep-quality-data-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#sleep-hours-data-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+#hydration-data, #sleep-hours-data, #sleep-quality-data {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
