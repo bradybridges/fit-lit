@@ -63,27 +63,57 @@ class Activity {
     return this.user.friends;
   }
 
-  //   getWeekAvgMinActive(date) {
-  //   const selectedDay = this.userActivity.findIndex(data => data.date === date);
-  //   const firstDay = selectedDay - 6;
-  //   return +(this.userActivity.reduce((mins, data, index) => {
-  //     if (index <= selectedDay && index >= firstDay) {
-  //       mins += data.minutesActive;
-  //     }
-  //     return mins;
-  //   }, 0) / 7).toFixed(2);
-  // }
+  getWeekMinActive(date) {
+    const selectedDay = this.userActivity.findIndex(data => data.date === date);
+    const firstDay = selectedDay - 6;
+    return this.userActivity.reduce((mins, data, index) => {
+      if (index <= selectedDay && index >= firstDay) {
+        mins.push({['x']: data.date, ['y']:data.minutesActive})
+      }
+      return mins;
+    }, []);
+  }
 
-  // for a user, what days had increasing steps for 3 or more days
+  getWeekSteps(date) {
+    const selectedDay = this.userActivity.findIndex(data => data.date === date);
+    const firstDay = selectedDay - 6;
+    return this.userActivity.reduce((steps, data, index) => {
+      if (index <= selectedDay && index >= firstDay) {
+        steps.push({['x']: data.date, ['y']:data.numSteps})
+      }
+      return steps;
+    }, []);
+  }
+
+  getWeekStairs(date) {
+    const selectedDay = this.userActivity.findIndex(data => data.date === date);
+    const firstDay = selectedDay - 6;
+    return this.userActivity.reduce((stairs, data, index) => {
+      if (index <= selectedDay && index >= firstDay) {
+        stairs.push({['x']: data.date, ['y']:data.flightsOfStairs})
+      }
+      return stairs;
+    }, []);
+  }
+
   getThreeDayStepTrends() {
     return this.userActivity.reduce((streaks, data, index, activities) => {
-      // console.log(data)
       if (index !== 0 && index !== activities.length - 1 && data.numSteps <= activities[index + 1].numSteps && data.numSteps >= activities[index - 1].numSteps) {
-        streaks.push(data.date)
+        streaks.push(activities[index + 1].date)
       }
       return streaks;
     }, []);
   }
+
+  getThreeDayStairTrends() {
+    return this.userActivity.reduce((streaks, data, index, activities) => {
+      if (index !== 0 && index !== activities.length - 1 && data.flightsOfStairs <= activities[index + 1].flightsOfStairs && data.flightsOfStairs >= activities[index - 1].flightsOfStairs) {
+        streaks.push(activities[index + 1].date)
+      }
+      return streaks;
+    }, []);
+  }
+
 
 }
 

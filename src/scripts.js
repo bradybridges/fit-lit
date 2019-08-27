@@ -138,7 +138,7 @@ $(document).ready(() =>{
           }
         }]
       }
-    }
+    }  
   });
 
   //sleep
@@ -340,6 +340,114 @@ const friendStepsChart = new Chart($('#friend-steps'), {
           'blue',
           'orange',
           'blue'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+const weeklyMinutesChart = new Chart($('#week-minutes-chart'), {
+    type: 'line',
+    data: {
+      labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
+      datasets: [{
+        label: 'Minutes Active This Week',
+        data: activity.getWeekMinActive(date),
+        backgroundColor: [
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+const weeklyStepsChart = new Chart($('#week-steps-chart'), {
+    type: 'line',
+    data: {
+      labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
+      datasets: [{
+        label: 'Steps Taken This Week',
+        data: activity.getWeekSteps(date),
+        backgroundColor: [
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+const weeklyStairsChart = new Chart($('#week-stairs-chart'), {
+    type: 'line',
+    data: {
+      labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
+      datasets: [{
+        label: 'Flights of Stairs This Week',
+        data: activity.getWeekStairs(date),
+        backgroundColor: [
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)',
+          'rgba(148, 152, 152, .74)'
         ]
       }]
     },

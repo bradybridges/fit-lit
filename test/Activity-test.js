@@ -57,21 +57,23 @@ describe('Activity', () => {
   })
 
   it('should return the user\'s weekly minutes active', () => {
-
+    expect(userActivity.getWeekMinActive(date).length).to.equal(7);
   });
 
   it('should return the user\'s weekly steps', () => {
-
+    expect(userActivity.getWeekSteps(date).length).to.equal(7);
   });
 
   it('should return the user\'s weekly stairs', () => {
-    
+    expect(userActivity.getWeekStairs(date).length).to.equal(7);
   })
 
   it('should return the number of days user had 3 days increased steps', () => {
-    let count = userActivity.getThreeDayStepTrends();;
-    console.log(count)
-    expect(userActivity.getThreeDayStepTrends()).to.equal(3)
+    expect(userActivity.getThreeDayStepTrends().length).to.equal(3);
+  })
+
+  it('should return the number of days user had 3 days increased stairs', () => {
+    expect(userActivity.getThreeDayStairTrends().length).to.equal(2);
   })
 
 })
