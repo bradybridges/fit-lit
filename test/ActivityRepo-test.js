@@ -32,6 +32,14 @@ describe('ActivityRepo', () => {
     expect(activityRepo.getAvgMinActiveAllUsers(date)).to.equal(204);
   })
 
+  it('should return total steps for week for a user', () => {
+    expect(activityRepo.getTotalStepsForWeek(date, 1)).to.equal(49400);
+  })
+
+  it('should return index of most steps from an array', () => {
+    expect(activityRepo.getTotalStepWinnerIndex([10,25,2])).to.equal(1);
+  })
+
   // it('should   ', () => {
   //   // make one
   // })

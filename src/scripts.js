@@ -1,6 +1,6 @@
 $(document).ready(() =>{
  
-  let user, userRepo, hydration, hydrationRepo, sleep, sleepRepo, activity, activityRepo, date, id, today;
+  let user, userRepo, hydration, hydrationRepo, sleep, sleepRepo, activity, activityRepo, date, id, today, friends, friendSteps, friendNames, stepWinnerIndex;
 
   id = 22;
   today = new Date().toString().split(' ').slice(0,4).join(' ');
@@ -9,11 +9,11 @@ $(document).ready(() =>{
   hydrationRepo = new HydrationRepo(hydrationData);
   sleepRepo = new SleepRepo(sleepData, userData);
   activityRepo = new ActivityRepo(activityData, userData);
-  user= new User(userRepo.getUser(id));
+  user = new User(userRepo.getUser(id));
   hydration = new Hydration(hydrationRepo.getUserHydrationData(id));
   sleep = new Sleep(sleepRepo.getUserData(id));
   activity = new Activity(activityRepo.getUserActivity(id), userRepo.getUser(id));
-
+  
   //functions
   //user details fns
   const getUserID = () => {
@@ -221,8 +221,18 @@ $(document).ready(() =>{
   });
 
   //activity
+  friends = user.friends;
+  friendSteps = [];
+  friends.forEach(friend => {
+    const totalSteps = activityRepo.getTotalStepsForWeek(date, friend);
+    friendSteps.push(totalSteps);
+  });
+  friendNames = userRepo.getFriendNames(user.friends);
+  stepWinnerIndex = activityRepo.getTotalStepWinnerIndex(friendSteps);
+
   $('#miles').text(getMilesWalkedToday());
   $('#step-goal-reached').text(activity.checkStepGoal(date));
+  $('#total-step-winner').text(`${friendNames[stepWinnerIndex]} Wins This Week For Most Steps!`);
 
   //activity charts
   const compareStepsChart = new Chart($('#step-chart'), {
@@ -318,6 +328,38 @@ const compareStairsChart = new Chart($('#stairs-chart'), {
       }
     }
   });
-  console.log(activity.getFlightsOfStairs(date));
+
+const friendStepsChart = new Chart($('#friend-steps'), {
+    type: 'horizontalBar',
+    data: {
+      labels: friendNames,
+      datasets: [{
+        label: 'Total Steps This Week',
+        data: friendSteps,
+        backgroundColor: [
+          'blue',
+          'orange',
+          'blue'
+        ]
+      }]
+    },
+    options: {
+      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
+      responsive: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
 });
 
