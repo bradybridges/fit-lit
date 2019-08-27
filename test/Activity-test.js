@@ -52,5 +52,10 @@ describe('Activity', () => {
     expect(userActivity.getUserStairRecord()).to.equal(36)
   })
 
+  it('should return the number of days user had 3 days increased steps', () => {
+    let count = userActivity.getThreeDayStepTrends();;
+    console.log(count)
+    expect(userActivity.getThreeDayStepTrends()).to.equal(5)
+  })
 
 })

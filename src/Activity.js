@@ -59,6 +59,21 @@ class Activity {
     }, 0);
   }
 
+  // for a user, what days had increasing steps for 3 or more days
+  getThreeDayStepTrends() {
+    return this.userActivity.reduce((streaks, data, index) => {
+      console.log(data)
+      console.log(index)
+      while(index > 0 && index < this.userActivity.length) {
+      if (data.numSteps <= data[index + 1].numSteps && data.numSteps >= data[index - 1].numSteps) {
+        streaks++;
+      }
+      return streaks;
+    }, 0);
+  }
+}
+  
+
 }
 
 if (typeof module !== 'undefined') {
