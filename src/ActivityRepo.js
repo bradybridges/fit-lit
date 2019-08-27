@@ -36,7 +36,27 @@ class ActivityRepo {
     }, 0) / todaysData.length).toFixed(2);    
   }
 
-  
+  getTotalStepsForWeek(date, id) {
+    const userData = this.activityData.filter(data => data.userID === id);
+    const startIndex = userData.findIndex(data => data.date === date) - 6;
+    const stepTotal = userData.reduce((totalSteps, activity, index) => {
+      if(index >= startIndex && index <= startIndex + 6) {
+        totalSteps += activity.numSteps;
+      };
+      return totalSteps;
+    }, 0);
+    return stepTotal;
+  }
+
+  getTotalStepWinnerIndex(totalStepArray) {
+    let mostSteps = totalStepArray.reduce((maxSteps, steps) => {
+      steps > maxSteps ? maxSteps = steps : null;
+      return maxSteps;
+    }, -1);
+
+    return totalStepArray.findIndex(steps => steps === mostSteps);
+  }
+
 }
 
 if (typeof module !== 'undefined') {

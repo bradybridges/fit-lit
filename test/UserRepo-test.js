@@ -24,4 +24,9 @@ describe('UserRepo', () => {
   it('should be able to calculate average steps goal of all users', () => {
     expect(users.calculateAverageStepGoal()).to.equal(6400);
   });
+
+  it('should return user friend names given', () => {
+    let friends = users.getUser(1).friends;
+    expect(users.getFriendNames(friends)).to.deep.equal([ 'Jarvis', 'Herminia', 'Mae']);
+  });
 });

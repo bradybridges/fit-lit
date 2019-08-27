@@ -59,22 +59,34 @@ class Activity {
     }, 0);
   }
 
+  getFriends() {
+    return this.user.friends;
+  }
+
+  //   getWeekAvgMinActive(date) {
+  //   const selectedDay = this.userActivity.findIndex(data => data.date === date);
+  //   const firstDay = selectedDay - 6;
+  //   return +(this.userActivity.reduce((mins, data, index) => {
+  //     if (index <= selectedDay && index >= firstDay) {
+  //       mins += data.minutesActive;
+  //     }
+  //     return mins;
+  //   }, 0) / 7).toFixed(2);
+  // }
+
   // for a user, what days had increasing steps for 3 or more days
   getThreeDayStepTrends() {
-    return this.userActivity.reduce((streaks, data, index) => {
-      console.log(data)
-      console.log(index)
-      while(index > 0 && index < this.userActivity.length) {
-      if (data.numSteps <= data[index + 1].numSteps && data.numSteps >= data[index - 1].numSteps) {
-        streaks++;
+    return this.userActivity.reduce((streaks, data, index, activities) => {
+      // console.log(data)
+      if (index !== 0 && index !== activities.length - 1 && data.numSteps <= activities[index + 1].numSteps && data.numSteps >= activities[index - 1].numSteps) {
+        streaks.push(data.date)
       }
       return streaks;
-    }, 0);
+    }, []);
   }
-}
-  
 
 }
+
 
 if (typeof module !== 'undefined') {
   module.exports = Activity;
