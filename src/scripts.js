@@ -99,10 +99,18 @@ $(document).ready(() =>{
   $('#step-goal').text(getDailyStepGoal());
   $('#step-goal-avg').text(getAverageStepGoal());
   $('#friends').append(createFriendNamesList());
+  $('#user-details').hide();
+  $('#profile-img').click(function() {
+    $('#user-details').slideToggle(500);
+  });
 
   //hydration
   $('#water-today').text(getWaterToday());
   $('#water-average').text(getAverageWaterConsumtion());
+  $('#hydration').hide();
+  $('#hydration-header').click(function() {
+    $('#hydration').slideToggle(500);
+  });
 
   //hydration charts
   const weeklyHydrationChart = new Chart($('#water-week-chart'), {
@@ -110,7 +118,7 @@ $(document).ready(() =>{
     data: {
       labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
       datasets: [{
-        label: 'Weekly Sleep Quality',
+        label: 'Weekly Water Consumtion',
         data: hydration.getFluidOuncesForWeek(date),
         backgroundColor: [
           'rgba(148, 152, 152, .74)',
@@ -146,6 +154,10 @@ $(document).ready(() =>{
   $('#avg-hours').text(getAvgHoursSlept());
   $('#quality-sleep').text(getSleepQuality());
   $('#avg-quality').text(getAvgSleepQuality());
+  $('#sleep').hide();
+  $('#sleep-header').click(function() {
+    $('#sleep').slideToggle(500);
+  })
 
   //sleep charts
   const weeklyHoursSleepChart = new Chart($('#hours-sleep-week-chart'), {
@@ -189,7 +201,7 @@ $(document).ready(() =>{
     data: {
       labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
       datasets: [{
-        label: 'Weekly Hydration',
+        label: 'Weekly Sleep Quality',
         data: sleep.getSleepQualityForWeek(date),
         backgroundColor: [
           'rgba(148, 152, 152, .74)',
@@ -233,6 +245,10 @@ $(document).ready(() =>{
   $('#miles').text(getMilesWalkedToday());
   $('#step-goal-reached').text(activity.checkStepGoal(date));
   $('#total-step-winner').text(`${friendNames[stepWinnerIndex]} Wins This Week For Most Steps!`);
+  $('#activity').hide();
+  $('#activity-header').click(function () {
+    $('#activity').slideToggle(500);
+  })
 
   //activity charts
   const compareStepsChart = new Chart($('#step-chart'), {
@@ -328,6 +344,8 @@ const compareStairsChart = new Chart($('#stairs-chart'), {
       }
     }
   });
+
+
 
 const friendStepsChart = new Chart($('#friend-steps'), {
     type: 'horizontalBar',

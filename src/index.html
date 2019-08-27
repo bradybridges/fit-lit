@@ -2,8 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta lang="en">
     <title>FitLit</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   </head>
@@ -14,6 +16,7 @@
       <h2 class="today">Today is <span id="date"></span></h2>
     </header>
     <main>
+      <img id="profile-img" src="../images/profile.svg" alt="profile toggle image">
       <section id="user-details">
         <h3>Profile:</h3>
         <p>User ID: <span id="user-id"></span></p>
@@ -26,27 +29,36 @@
         <p>Friends:</p>
         <ul id="friends"></ul>
       </section>
+      <h3 id="hydration-header">Hydration</h3>
       <section id="hydration">
-        <h3>Hydration:</h3>
-        <p>Water Consumed Today: <span id="water-today"></span></p>
-        <p>Average Daily Water Consumption: <span id="water-average"></span></p>
-        <p>Water Consumed Over the Last Week:</p>
-        <canvas id="water-week-chart" width="400" height="400"></canvas>
-
+        <section id="hydration-data">
+          <p>Water Consumed Today: <span id="water-today"></span></p>
+          <p>Average Daily Water Consumption: <span id="water-average"></span></p>
+          <p>Water Consumed Over the Last Week:</p>
+        </section>
+          <canvas id="water-week-chart" width="400" height="400"></canvas>
       </section>
+      <h3 id="sleep-header">Sleep</h3>
       <section id="sleep">
-        <h3>Sleep:</h3>
-        <p>Hours Slept: <span id="hours-sleep"></span></p>
-        <p>Average Amount of Sleep: <span id="avg-hours"></span></p>
-        <p>Hours Slept Over the Last Week:</p>
-        <canvas id="hours-sleep-week-chart" width="400" height="400"></canvas>
-        <p>Sleep Quality: <span id="quality-sleep"></span></p>
-        <p>Average Sleep Quality: <span id="avg-quality"></span></p>
-        <p>Sleep Quality Over the Last Week:</p>
-        <canvas id="sleep-quality-week-chart" width="400" height="400"></canvas>
+        <section id="sleep-hours-data-container">
+          <section id="sleep-hours-data">
+            <p>Hours Slept: <span id="hours-sleep"></span></p>
+            <p>Average Amount of Sleep: <span id="avg-hours"></span></p>
+            <p>Hours Slept Over the Last Week:</p>
+          </section>
+            <canvas id="hours-sleep-week-chart" width="400" height="400"></canvas>
+        </section>
+        <section id="sleep-quality-data-container">
+          <section id="sleep-quality-data">
+            <p>Sleep Quality: <span id="quality-sleep"></span></p>
+            <p>Average Sleep Quality: <span id="avg-quality"></span></p>
+            <p>Sleep Quality Over the Last Week:</p>
+          </section>
+          <canvas id="sleep-quality-week-chart" width="400" height="400"></canvas>
+        </section>
       </section>
+      <h3 id="activity-header">Activity</h3>
       <section id="activity">
-        <h3>Activity:</h3>
         <p>Distance Walked Today: <span id="miles"></span> miles</p>
         <!-- each of these are supposed to be compared so I was thinking of doing 3 differnt simple bar charts to show the user's day info vs all users average -->
         <p id="step-goal-reached"></p>
