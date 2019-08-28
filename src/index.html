@@ -21,7 +21,12 @@
         <input id="user-id-input" type="number" name="id-input" placeholder="Enter UserID">
         <button id="user-selection-button">Submit</button>
       </section>
-      <img id="profile-img" src="../images/profile.svg" alt="profile toggle image">
+      <section id="tabs-container">
+        <img id="profile-img" src="../images/profile.svg" alt="profile toggler image">
+        <img id="hydration-img" src="../images/drop.svg" alt="hydration toggler image">
+        <img id="sleep-img" src="../images/moon.svg" alt="sleep toggler image">
+        <img id="activity-img" src="../images/stretching-exercises.svg" alt="activity toggler image">
+      </section>
       <section id="user-details">
         <h3>Profile:</h3>
         <p>User ID: <span id="user-id"></span></p>
@@ -34,7 +39,7 @@
         <p>Friends:</p>
         <ul id="friends"></ul>
       </section>
-      <h3 id="hydration-header">Hydration</h3>
+      <!-- <h3 id="hydration-header">Hydration</h3> -->
       <section id="hydration">
         <section id="hydration-data">
           <p>Water Consumed Today: <span id="water-today"></span></p>
@@ -42,7 +47,7 @@
         </section>
           <canvas id="water-week-chart" width="400" height="400"></canvas>
       </section>
-      <h3 id="sleep-header">Sleep</h3>
+      <!-- <h3 id="sleep-header">Sleep</h3> -->
       <section id="sleep">
         <section id="sleep-hours-data-container">
           <section id="sleep-hours-data">
@@ -59,7 +64,7 @@
           <canvas id="sleep-quality-week-chart" width="400" height="400"></canvas>
         </section>
       </section>
-      <h3 id="activity-header">Activity</h3>
+      <!-- <h3 id="activity-header">Activity</h3> -->
       <section id="activity">
         <p>Distance Walked Today: <span id="miles"></span> miles</p>
         <!-- each of these are supposed to be compared so I was thinking of doing 3 differnt simple bar charts to show the user's day info vs all users average -->

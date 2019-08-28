@@ -84,7 +84,7 @@ $(document).ready(() =>{
   const appendHydrationData = () => {
     $('#water-today').text(getWaterToday());
     $('#water-average').text(getAverageWaterConsumtion());
-    $('#hydration-header').show();
+    $('#hydration-img').show();
     $('#hydration').slideUp();
   }
 
@@ -135,7 +135,7 @@ $(document).ready(() =>{
     $('#avg-hours').text(getAvgHoursSlept());
     $('#quality-sleep').text(getSleepQuality());
     $('#avg-quality').text(getAvgSleepQuality());
-    $('#sleep-header').show();
+    $('#sleep-img').show();
     $('#sleep').slideUp();
   }
 
@@ -241,7 +241,7 @@ $(document).ready(() =>{
     $('#miles').text(getMilesWalkedToday());
     $('#step-goal-reached').text(activity.checkStepGoal(date));
     $('#total-step-winner').text(`${friendNames[stepWinnerIndex]} Wins This Week For Most Steps!`);
-    $('#activity-header').show();
+    $('#activity-img').show();
     $('#activity').slideUp();
   }
 
@@ -516,16 +516,16 @@ $(document).ready(() =>{
   });
 
   //hydration
-  $('#hydration-header').hide();
+  $('#hydration-img').hide();
   $('#hydration').hide();
-  $('#hydration-header').click(function() {
+  $('#hydration-img').click(function() {
     $('#hydration').slideToggle(500);
   });
   
   //sleep
   $('#sleep').hide();
-  $('#sleep-header').hide();
-  $('#sleep-header').click(function() {
+  $('#sleep-img').hide();
+  $('#sleep-img').click(function() {
     $('#sleep').slideToggle(500);
   });
 
@@ -533,10 +533,9 @@ $(document).ready(() =>{
   
   //activity
   $('#activity').hide();
-  $('#activity-header').hide();
-  $('#activity-header').click(function () {
+  $('#activity-img').hide();
+  $('#activity-img').click(function () {
       $('#activity').slideToggle(500);
   });
 
 });
-
