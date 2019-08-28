@@ -88,27 +88,22 @@ $(document).ready(() =>{
     $('#hydration').slideUp();
   }
 
+  Chart.defaults.global.defaultFontColor = 'rgb(255,255,255)';
+  Chart.defaults.global.defaultFontFamily ='Roboto';
+
   const appendHydrationChart = () => {
     const weeklyHydrationChart = new Chart($('#water-week-chart'), {
       type: 'line',
       data: {
-        labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+        labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
         datasets: [{
           label: 'Weekly Water Consumtion',
           data: hydration.getFluidOuncesForWeek(date),
-          backgroundColor: [
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)'
-          ]
+          backgroundColor: 'rgba(240, 147, 43, .5)',
+          borderColor: 'rgba(34, 166, 179, 1)'
         }]
       },
       options: {
-        defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
         responsive: false,
         maintainAspectRatio: true,
         aspectRatio: 2,
@@ -122,7 +117,7 @@ $(document).ready(() =>{
             }
           }]
         }
-      }  
+      } 
     });
   }
 
@@ -148,7 +143,7 @@ $(document).ready(() =>{
     const weeklyHoursSleepChart = new Chart($('#hours-sleep-week-chart'), {
       type: 'line',
       data: {
-        labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+        labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
         datasets: [{
           label: 'Weekly Hours Of Sleep',
           data: sleep.getSleepHoursForWeek(date),
@@ -164,7 +159,6 @@ $(document).ready(() =>{
         }]
       },
       options: {
-        defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
         responsive: false,
         maintainAspectRatio: true,
         aspectRatio: 2,
@@ -184,7 +178,7 @@ $(document).ready(() =>{
     const weeklySleepQualityChart = new Chart($('#sleep-quality-week-chart'), {
       type: 'line',
       data: {
-        labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+        labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
         datasets: [{
           label: 'Weekly Sleep Quality',
           data: sleep.getSleepQualityForWeek(date),
@@ -200,7 +194,6 @@ $(document).ready(() =>{
         }]
       },
       options: {
-        defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
         responsive: false,
         maintainAspectRatio: true,
         aspectRatio: 2,
@@ -267,7 +260,6 @@ $(document).ready(() =>{
         }]
       },
       options: {
-        defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
         responsive: false,
         maintainAspectRatio: true,
         aspectRatio: 2,
@@ -298,7 +290,6 @@ $(document).ready(() =>{
           }]
         },
         options: {
-          defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
           responsive: false,
           maintainAspectRatio: true,
           aspectRatio: 2,
@@ -330,7 +321,6 @@ $(document).ready(() =>{
           }]
         },
         options: {
-          defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
           responsive: false,
           maintainAspectRatio: true,
           aspectRatio: 2,
@@ -347,8 +337,6 @@ $(document).ready(() =>{
         }
     });
 
-
-
     const friendStepsChart = new Chart($('#friend-steps'), {
       type: 'horizontalBar',
         data: {
@@ -364,17 +352,16 @@ $(document).ready(() =>{
           }]
         },
         options: {
-          defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
           responsive: false,
-        maintainAspectRatio: true,
-        aspectRatio: 2,
-        scales: {
-          yAxes: [{
-            gridLines: {
-              display: false
-            },
-            ticks: {
-              beginAtZero: true
+          maintainAspectRatio: true,
+          aspectRatio: 2,
+          scales: {
+            yAxes: [{
+              gridLines: {
+                display: false
+              },
+              ticks: {
+                beginAtZero: true
             }
           }]
         }
@@ -436,7 +423,6 @@ $(document).ready(() =>{
         }]
       },
       options: {
-        defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
         responsive: false,
         maintainAspectRatio: true,
         aspectRatio: 2,
@@ -472,7 +458,6 @@ $(document).ready(() =>{
         }]
       },
       options: {
-        defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
         responsive: false,
         maintainAspectRatio: true,
         aspectRatio: 2,
@@ -552,7 +537,5 @@ $(document).ready(() =>{
   $('#activity-img').click(function () {
       $('#activity').slideToggle(500);
   });
-
-  //activity charts
 
 });

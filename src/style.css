@@ -6,7 +6,8 @@
 
 body { 
   text-align: center;
-  color: rgba(19, 15, 64,1.0);
+  color: rgb(255,255,255);
+  /*color: rgba(19, 15, 64,1.0);*/
   background-color: rgba(149, 175, 192, 1.0);
 }
 

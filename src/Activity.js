@@ -47,7 +47,7 @@ class Activity {
     const days = this.userActivity.filter(data => {
       return data.numSteps >= this.user.dailyStepGoal
     });
-    return days;
+    return days.length;
   }
 
   getUserStairRecord() {
@@ -64,31 +64,21 @@ class Activity {
   }
 
   getWeekMinActive(date) {
-    const selectedDay = this.userActivity.findIndex(data => data.date === date);
-    const firstDay = selectedDay - 6;
-    return this.userActivity.reduce((mins, data, index) => {
-      if (index <= selectedDay && index >= firstDay) {
-        mins.push({['x']: data.date, ['y']:data.minutesActive})
-      }
-      return mins;
-    }, []);
+    const today = this.userActivity.findIndex(data => data.date === date);
+    const week = this.userActivity.slice(today - 6, today + 1);
+    return week.map(day => ({['x']: day.date, ['y']: day.minutesActive}));
   }
 
   getWeekSteps(date) { 
-    const selectedDay = this.userActivity.findIndex(data => data.date === date);
-    const firstDay = selectedDay - 6;
-    return this.userActivity.reduce((steps, data, index) => {
-      if (index <= selectedDay && index >= firstDay) {
-        steps.push({['x']: data.date, ['y']:data.numSteps})
-      }
-      return steps;
-    }, []);
+    const today = this.userActivity.findIndex(data => data.date === date);
+    const week = this.userActivity.slice(today - 6, today + 1);
+    return week.map(day => ({['x']: day.date, ['y']: day.numSteps}));
   }
 
   getWeekStairs(date) {
     const today = this.userActivity.findIndex(data => data.date === date);
     const week = this.userActivity.slice(today - 6, today + 1);
-     return week.map(day => ({['x']: day.date, ['y']: day.flightsOfStairs}))
+    return week.map(day => ({['x']: day.date, ['y']: day.flightsOfStairs}));
   }
 
   getThreeDayStepTrends() {
