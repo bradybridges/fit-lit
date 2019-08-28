@@ -2,9 +2,20 @@ body {
   text-align: center;
 }
 
-#profile-img {
+#tabs-container {
+  background-color:black;
+  margin: 0 auto;
+  width: 50%;
+}
+
+#profile-img, #hydration-img, #sleep-img, #activity-img {
   height: 50px;
+  padding: 0 20px;
   width: 50px;
+}
+
+#profile-img, #hydration-img, #sleep-img {
+  border-right: solid white 2px;
 }
 
 #hydration, #sleep-quality-data-container {
