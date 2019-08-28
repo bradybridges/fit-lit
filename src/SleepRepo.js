@@ -36,10 +36,10 @@ class SleepRepo {
         return total;
       }, 0) / 7).toFixed(2);
       if (avg >= 3) {  
-        goodSleepers.push(user.name);
+        goodSleepers.push(user.name.split(' ')[0]);  
       }
     })
-    return goodSleepers;
+    return goodSleepers.length;
   }
 }
 

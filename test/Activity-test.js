@@ -69,11 +69,11 @@ describe('Activity', () => {
   })
 
   it('should return the number of days user had 3 days increased steps', () => {
-    expect(userActivity.getThreeDayStepTrends().length).to.equal(3);
+    expect(userActivity.getThreeDayStepTrends()).to.equal(3);
   })
 
   it('should return the number of days user had 3 days increased stairs', () => {
-    expect(userActivity.getThreeDayStairTrends().length).to.equal(2);
+    expect(userActivity.getThreeDayStairTrends()).to.equal(1);
   })
 
 })
