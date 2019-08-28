@@ -45,7 +45,7 @@ describe('Activity', () => {
   })
 
   it('should return all days user reached their step goal', () => {
-    expect(userActivity.getDaysStepGoalReached().length).to.equal(2);
+    expect(userActivity.getDaysStepGoalReached()).to.equal(2);
   })
 
   it('should return user\'s stair record', () => {
