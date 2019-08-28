@@ -480,8 +480,8 @@ $(document).ready(() =>{
   }
 
   //header
-  $('.welcome').hide();
-  $('.today').hide();
+  // $('.welcome').hide();
+  // $('.today').hide();
 
   //main
   //User Selection 
@@ -509,22 +509,22 @@ $(document).ready(() =>{
   });
   
   //user details
-  $('#user-details').hide();
-  $('#profile-img').hide();
+  // $('#user-details').hide();
+  // $('#profile-img').hide();
   $('#profile-img').click(function() {
     $('#user-details').slideToggle(500);
   });
 
   //hydration
-  $('#hydration-img').hide();
-  $('#hydration').hide();
+  // $('#hydration-img').hide();
+  // $('#hydration').hide();
   $('#hydration-img').click(function() {
     $('#hydration').slideToggle(500);
   });
   
   //sleep
-  $('#sleep').hide();
-  $('#sleep-img').hide();
+  // $('#sleep').hide();
+  // $('#sleep-img').hide();
   $('#sleep-img').click(function() {
     $('#sleep').slideToggle(500);
   });
@@ -532,8 +532,8 @@ $(document).ready(() =>{
   //sleep charts
   
   //activity
-  $('#activity').hide();
-  $('#activity-img').hide();
+  // $('#activity').hide();
+  // $('#activity-img').hide();
   $('#activity-img').click(function () {
       $('#activity').slideToggle(500);
   });

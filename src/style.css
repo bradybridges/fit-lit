@@ -11,6 +11,10 @@ body {
   background-color: rgba(149, 175, 192, 1.0);
 }
 
+.welcome, .today, #user-details, #profile-img, #hydration-img, #hydration, #sleep-img, #sleep, #activity-img, #activity{
+  display: none;
+}
+
 canvas {
   background-color: rgba(83, 92, 104, 1.0);
 }
@@ -20,23 +24,24 @@ li {
 }
 
 #tabs-container {
-  background-color:black;
   margin: 0 auto;
   width: 50%;
 }
 
-#profile-img, #hydration-img, #sleep-img, #activity-img {
+img {
   fill: 'blue';
   height: 100px;
   padding: 0 20px;
+  transition: transform .2s;
   width: 100px;
 }
 
-#profile-img, #hydration-img, #sleep-img {
-  border-right: solid white 2px;
+img:hover {
+  transform: scale(1.3);
+  cursor: pointer;
 }
 
-#hydration, #sleep-quality-data-container {
+#hydration-container, #sleep-quality-data-container {
   display: flex;
   justify-content: space-around;
 }
