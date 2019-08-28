@@ -56,5 +56,24 @@ describe('Activity', () => {
     expect(userActivity.getFriends().length).to.equal(3);
   })
 
+  it('should return the user\'s weekly minutes active', () => {
+    expect(userActivity.getWeekMinActive(date).length).to.equal(7);
+  });
+
+  it('should return the user\'s weekly steps', () => {
+    expect(userActivity.getWeekSteps(date).length).to.equal(7);
+  });
+
+  it('should return the user\'s weekly stairs', () => {
+    expect(userActivity.getWeekStairs(date).length).to.equal(7);
+  })
+
+  it('should return the number of days user had 3 days increased steps', () => {
+    expect(userActivity.getThreeDayStepTrends().length).to.equal(3);
+  })
+
+  it('should return the number of days user had 3 days increased stairs', () => {
+    expect(userActivity.getThreeDayStairTrends().length).to.equal(2);
+  })
 
 })
