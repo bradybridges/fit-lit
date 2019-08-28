@@ -18,3 +18,11 @@ The main learing goals for this project include:
 
 ## Screenshots
 
+Comp
+
+![Comp](../images/comp.png)
+
+Project
+
+![Project](../images/to/screencapture.png)
+
