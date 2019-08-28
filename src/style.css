@@ -1,5 +1,21 @@
-body {
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+ /* scroll-behavior: smooth;*/
+}
+
+body { 
   text-align: center;
+  color: rgba(19, 15, 64,1.0);
+  background-color: rgba(149, 175, 192, 1.0);
+}
+
+canvas {
+  background-color: rgba(83, 92, 104, 1.0);
+}
+
+li {
+  list-style: none;
 }
 
 #tabs-container {
@@ -9,9 +25,10 @@ body {
 }
 
 #profile-img, #hydration-img, #sleep-img, #activity-img {
-  height: 50px;
+  fill: 'blue';
+  height: 100px;
   padding: 0 20px;
-  width: 50px;
+  width: 100px;
 }
 
 #profile-img, #hydration-img, #sleep-img {

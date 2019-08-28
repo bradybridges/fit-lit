@@ -556,4 +556,3 @@ $(document).ready(() =>{
   //activity charts
 
 });
-
