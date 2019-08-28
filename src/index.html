@@ -17,7 +17,7 @@
     </header>
     <main>
       <section id="user-selection">
-        <h3>Enter User ID</h3>
+        <h3>Find A User By ID</h3>
         <input id="user-id-input" type="number" name="id-input" placeholder="Enter UserID">
         <button id="user-selection-button">Submit</button>
       </section>
@@ -28,7 +28,7 @@
         <img id="activity-img" src="../images/stretching-exercises.svg" alt="activity toggler image">
       </section>
       <section id="user-details">
-        <h3>Profile:</h3>
+        <h3 class="data-header">Profile</h3>
         <p>User ID: <span id="user-id"></span></p>
         <p>Full Name: <span id="full-name"></span></p>
         <p>Address: <span id="address"></span></p>
@@ -43,6 +43,7 @@
       <section id="hydration">
         <section id="hydration-container">
           <section id="hydration-data">
+            <h3 class="data-header">Hydration</h3>
             <p>Water Consumed Today: <span id="water-today"></span></p>
             <p>Average Daily Water Consumption: <span id="water-average"></span></p>
           </section>
@@ -54,6 +55,7 @@
       </section>
       <!-- <h3 id="sleep-header">Sleep</h3> -->
       <section id="sleep">
+        <h3 class="data-header">Sleep</h3>
         <section id="sleep-hours-data-container">
           <section id="sleep-hours-data">
             <p>Hours Slept: <span id="hours-sleep"></span></p>
@@ -76,9 +78,12 @@
         </section>
       </section>
       <!-- <h3 id="activity-header">Activity</h3> -->
-      <section id="activity">
-        <p>Distance Walked Today: <span id="miles"></span> miles</p>
-        <p id="step-goal-reached"></p>
+      <section id="activity" class="flex-wrap">
+        <section id="flex-column">
+          <h3 class="data-header">Activity</h3>
+          <p>Distance Walked Today: <span id="miles"></span> miles</p>
+          <p id="step-goal-reached"></p>
+        </section>
         <figure>
           <h5>Steps Taken Today</h5>
           <canvas id="step-chart" width="600" height="300"></canvas>
