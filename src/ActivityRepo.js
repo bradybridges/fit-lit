@@ -53,7 +53,6 @@ class ActivityRepo {
       steps > maxSteps ? maxSteps = steps : null;
       return maxSteps;
     }, -1);
-
     return totalStepArray.findIndex(steps => steps === mostSteps);
   }
 
