@@ -46,7 +46,10 @@
             <p>Water Consumed Today: <span id="water-today"></span></p>
             <p>Average Daily Water Consumption: <span id="water-average"></span></p>
           </section>
-          <canvas id="water-week-chart" width="400" height="400"></canvas>
+          <figure>
+            <h5>Water Consumed Over the Past Week</h5>
+            <canvas id="water-week-chart" width="600" height="400"></canvas>
+          </figure>
         </section>
       </section>
       <!-- <h3 id="sleep-header">Sleep</h3> -->
@@ -56,42 +59,56 @@
             <p>Hours Slept: <span id="hours-sleep"></span></p>
             <p>Average Amount of Sleep: <span id="avg-hours"></span></p>
           </section>
-            <canvas id="hours-sleep-week-chart" width="400" height="400"></canvas>
+          <figure>
+            <h5>Hours Slept Over the Past Week</h5>
+            <canvas id="hours-sleep-week-chart" width="600" height="400"></canvas>
+          </figure>
         </section>
         <section id="sleep-quality-data-container">
           <section id="sleep-quality-data">
             <p>Sleep Quality: <span id="quality-sleep"></span></p>
             <p>Average Sleep Quality: <span id="avg-quality"></span></p>
           </section>
-          <canvas id="sleep-quality-week-chart" width="400" height="400"></canvas>
+          <figure>
+            <h5>Sleep Quality Over the Past Week</h5>
+            <canvas id="sleep-quality-week-chart" width="600" height="400"></canvas>
+          </figure>
         </section>
       </section>
       <!-- <h3 id="activity-header">Activity</h3> -->
       <section id="activity">
         <p>Distance Walked Today: <span id="miles"></span> miles</p>
-        <!-- each of these are supposed to be compared so I was thinking of doing 3 differnt simple bar charts to show the user's day info vs all users average -->
         <p id="step-goal-reached"></p>
-
-        <p></p>
-      
-        <canvas id="step-chart" width="600" height="300"></canvas>
-       
-        <canvas id="minutes-chart" width="600" height="300"></canvas>
-
-        <canvas id="stairs-chart" width="600" height="300"></canvas>
-
-        <h4 id="total-step-winner"></h4>
-        <canvas id="friend-steps" width="600" height="300"></canvas>
-
-        <canvas id="week-minutes-chart" width="400" height="400"></canvas>
-
-        <canvas id="week-steps-chart" width="400" height="400"></canvas>
-
-        <canvas id="week-stairs-chart" width="400" height="400"></canvas>
-
+        <figure>
+          <h5>Steps Taken Today</h5>
+          <canvas id="step-chart" width="600" height="300"></canvas>
+        </figure>
+        <figure>
+          <h5>Minutes Active Today</h5>
+          <canvas id="minutes-chart" width="600" height="300"></canvas>
+        </figure>
+        <figure>
+          <h5>Flights of Stairs Climbed Today</h5>
+          <canvas id="stairs-chart" width="600" height="300"></canvas>
+        </figure>
+        <figure>
+          <h5>Friends Step Challenge for the Past Week</h5>
+          <h4 id="total-step-winner"></h4>
+          <canvas id="friend-steps" width="600" height="300"></canvas>
+        </figure>
+        <figure>
+          <h5>Minutes Active Over the Past Week</h5>
+          <canvas id="week-minutes-chart" width="600" height="400"></canvas>
+        </figure>
+        <figure>
+          <h5>Steps Taken Over the Past Week</h5>
+          <canvas id="week-steps-chart" width="600" height="400"></canvas>
+        </figure>
+        <figure>
+          <h5>Flights of Stairs Climbed Over the Past Week</h5>
+          <canvas id="week-stairs-chart" width="600" height="400"></canvas>
+        </figure>
       </section>
-
-
     </main>
 
     <script type="text/javascript" src="../data/users.js"></script>

@@ -97,10 +97,12 @@ $(document).ready(() =>{
       data: {
         labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
         datasets: [{
-          label: 'Weekly Water Consumtion',
+          label: 'Ounces',
           data: hydration.getFluidOuncesForWeek(date),
           backgroundColor: 'rgba(240, 147, 43, .5)',
-          borderColor: 'rgba(34, 166, 179, 1)'
+          borderColor: 'rgba(34, 166, 179, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgb(255,255,255)'
         }]
       },
       options: {
@@ -145,17 +147,12 @@ $(document).ready(() =>{
       data: {
         labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
         datasets: [{
-          label: 'Weekly Hours Of Sleep',
+          label: 'Hours',
           data: sleep.getSleepHoursForWeek(date),
-          backgroundColor: [
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)'
-          ]
+          backgroundColor: 'rgba(240, 147, 43, .5)',
+          borderColor: 'rgba(34, 166, 179, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgb(255,255,255)'
         }]
       },
       options: {
@@ -180,17 +177,12 @@ $(document).ready(() =>{
       data: {
         labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
         datasets: [{
-          label: 'Weekly Sleep Quality',
+          label: 'Quality',
           data: sleep.getSleepQualityForWeek(date),
-          backgroundColor: [
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)'
-          ]
+          backgroundColor: 'rgba(240, 147, 43, .5)',
+          borderColor: 'rgba(34, 166, 179, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgb(255,255,255)'
         }]
       },
       options: {
@@ -251,12 +243,11 @@ $(document).ready(() =>{
       data: {
         labels: ['You', 'User Average'],
         datasets: [{
-          label: 'Steps Taken Today',
+          label: 'Steps',
           data: [activity.getStepsTaken(date), activityRepo.getAvgStepsAllUsers(date)],
-          backgroundColor: [
-            'blue',
-            'orange'
-          ]
+          backgroundColor: 'rgba(240, 147, 43, .5)',
+          borderColor: 'rgba(34, 166, 179, 1)',
+          borderWidth: 2
         }]
       },
       options: {
@@ -281,12 +272,11 @@ $(document).ready(() =>{
         data: {
           labels: ['You', 'User Average'],
           datasets: [{
-            label: 'Minutes Active Today',
+            label: 'Minutes',
             data: [activity.getMinutesActive(date), activityRepo.getAvgMinActiveAllUsers(date)],
-            backgroundColor: [
-              'blue',
-              'orange'
-            ]
+            backgroundColor: 'rgba(240, 147, 43, .5)',
+            borderColor: 'rgba(34, 166, 179, 1)',
+            borderWidth: 2
           }]
         },
         options: {
@@ -311,13 +301,11 @@ $(document).ready(() =>{
         data: {
           labels: ['You', 'User Average', 'Your Record'],
           datasets: [{
-            label: 'Flights of Stairs Climbed Today',
+            label: 'Flights of Stairs',
             data: [activity.getFlightsOfStairs(date), activityRepo.getAvgStairsAllUsers(date), activity.getUserStairRecord()],
-            backgroundColor: [
-              'blue',
-              'orange',
-              'blue'
-            ]
+            backgroundColor: 'rgba(240, 147, 43, .5)',
+            borderColor: 'rgba(34, 166, 179, 1)',
+            borderWidth: 2
           }]
         },
         options: {
@@ -342,13 +330,11 @@ $(document).ready(() =>{
         data: {
           labels: friendNames,
           datasets: [{
-            label: 'Total Steps This Week',
+            label: 'Steps',
             data: friendSteps,
-            backgroundColor: [
-              'blue',
-              'orange',
-              'blue'
-            ]
+            backgroundColor: 'rgba(240, 147, 43, .5)',
+            borderColor: 'rgba(34, 166, 179, 1)',
+            borderWidth: 2
           }]
         },
         options: {
@@ -373,21 +359,15 @@ $(document).ready(() =>{
       data: {
         labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
         datasets: [{
-          label: 'Minutes Active This Week',
+          label: 'Minutes',
           data: activity.getWeekMinActive(date),
-          backgroundColor: [
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)'
-          ]
+          backgroundColor: 'rgba(240, 147, 43, .5)',
+          borderColor: 'rgba(34, 166, 179, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgb(255,255,255)'
         }]
       },
       options: {
-        defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
         responsive: false,
         maintainAspectRatio: true,
         aspectRatio: 2,
@@ -409,17 +389,12 @@ $(document).ready(() =>{
       data: {
         labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
         datasets: [{
-          label: 'Steps Taken This Week',
+          label: 'Steps',
           data: activity.getWeekSteps(date),
-          backgroundColor: [
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)'
-          ]
+          backgroundColor: 'rgba(240, 147, 43, .5)',
+          borderColor: 'rgba(34, 166, 179, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgb(255,255,255)'
         }]
       },
       options: {
@@ -444,17 +419,12 @@ $(document).ready(() =>{
       data: {
         labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
         datasets: [{
-          label: 'Flights of Stairs This Week',
+          label: 'Flights of Stairs',
           data: activity.getWeekStairs(date),
-          backgroundColor: [
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)',
-            'rgba(148, 152, 152, .74)'
-          ]
+          backgroundColor: 'rgba(240, 147, 43, .5)',
+          borderColor: 'rgba(34, 166, 179, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgb(255,255,255)'
         }]
       },
       options: {

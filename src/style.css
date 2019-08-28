@@ -7,20 +7,28 @@
 body { 
   text-align: center;
   color: rgb(255,255,255);
-  /*color: rgba(19, 15, 64,1.0);*/
   background-color: rgba(149, 175, 192, 1.0);
 }
 
+figure {
+  width: 600px;
+  background-color: rgba(83, 92, 104, 1.0);
+}
 .welcome, .today, #user-details, #profile-img, #hydration-img, #hydration, #sleep-img, #sleep, #activity-img, #activity{
   display: none;
 }
 
-canvas {
-  background-color: rgba(83, 92, 104, 1.0);
-}
-
 li {
   list-style: none;
+}
+
+p {
+  font-size: 2em;
+}
+
+h5 {
+  font-size: 1.8em;
+  margin: 10px auto;
 }
 
 #user-selection-button:hover {
@@ -33,7 +41,6 @@ li {
 }
 
 img {
-  fill: 'blue';
   height: 100px;
   padding: 0 20px;
   transition: transform .2s;
