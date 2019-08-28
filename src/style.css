@@ -23,6 +23,10 @@ li {
   list-style: none;
 }
 
+#user-selection-button:hover {
+  cursor: pointer;
+}
+
 #tabs-container {
   margin: 0 auto;
   width: 50%;
