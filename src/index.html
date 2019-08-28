@@ -16,6 +16,11 @@
       <h2 class="today">Today is <span id="date"></span></h2>
     </header>
     <main>
+      <section id="user-selection">
+        <h3>Enter User ID</h3>
+        <input id="user-id-input" type="number" name="id-input" placeholder="Enter UserID">
+        <button id="user-selection-button">Submit</button>
+      </section>
       <img id="profile-img" src="../images/profile.svg" alt="profile toggle image">
       <section id="user-details">
         <h3>Profile:</h3>
@@ -43,7 +48,6 @@
           <section id="sleep-hours-data">
             <p>Hours Slept: <span id="hours-sleep"></span></p>
             <p>Average Amount of Sleep: <span id="avg-hours"></span></p>
-            <p>Hours Slept Over the Last Week:</p>
           </section>
             <canvas id="hours-sleep-week-chart" width="400" height="400"></canvas>
         </section>
@@ -51,7 +55,6 @@
           <section id="sleep-quality-data">
             <p>Sleep Quality: <span id="quality-sleep"></span></p>
             <p>Average Sleep Quality: <span id="avg-quality"></span></p>
-            <p>Sleep Quality Over the Last Week:</p>
           </section>
           <canvas id="sleep-quality-week-chart" width="400" height="400"></canvas>
         </section>
