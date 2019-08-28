@@ -1,8 +1,26 @@
-body {
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+ /* scroll-behavior: smooth;*/
+}
+
+body { 
   text-align: center;
+  color: rgb(255,255,255);
+  /*color: rgba(19, 15, 64,1.0);*/
+  background-color: rgba(149, 175, 192, 1.0);
+}
+
+canvas {
+  background-color: rgba(83, 92, 104, 1.0);
+}
+
+li {
+  list-style: none;
 }
 
 #profile-img {
+  fill: 'blue';
   height: 50px;
   width: 50px;
 }
