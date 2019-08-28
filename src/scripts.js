@@ -111,28 +111,22 @@ $(document).ready(() =>{
   $('#hydration-header').click(function() {
     $('#hydration').slideToggle(500);
   });
+  Chart.defaults.global.defaultFontColor = 'rgba(34, 166, 179, 1.0)';
+  Chart.defaults.global.defaultFontFamily ='Roboto';
 
   //hydration charts
   const weeklyHydrationChart = new Chart($('#water-week-chart'), {
     type: 'line',
     data: {
-      labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+      labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
       datasets: [{
         label: 'Weekly Water Consumtion',
         data: hydration.getFluidOuncesForWeek(date),
-        backgroundColor: [
-          'rgba(148, 152, 152, .74)',
-          'rgba(148, 152, 152, .74)',
-          'rgba(148, 152, 152, .74)',
-          'rgba(148, 152, 152, .74)',
-          'rgba(148, 152, 152, .74)',
-          'rgba(148, 152, 152, .74)',
-          'rgba(148, 152, 152, .74)'
-        ]
+        backgroundColor: 'rgba(240, 147, 43, .5)',
+        borderColor: 'rgba(34, 166, 179, 1)'
       }]
     },
     options: {
-      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
       responsive: false,
       maintainAspectRatio: true,
       aspectRatio: 2,
@@ -163,7 +157,7 @@ $(document).ready(() =>{
   const weeklyHoursSleepChart = new Chart($('#hours-sleep-week-chart'), {
     type: 'line',
     data: {
-      labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+      labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
       datasets: [{
         label: 'Weekly Hours Of Sleep',
         data: sleep.getSleepHoursForWeek(date),
@@ -179,7 +173,6 @@ $(document).ready(() =>{
       }]
     },
     options: {
-      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
       responsive: false,
       maintainAspectRatio: true,
       aspectRatio: 2,
@@ -199,7 +192,7 @@ $(document).ready(() =>{
   const weeklySleepQualityChart = new Chart($('#sleep-quality-week-chart'), {
     type: 'line',
     data: {
-      labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+      labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
       datasets: [{
         label: 'Weekly Sleep Quality',
         data: sleep.getSleepQualityForWeek(date),
@@ -215,7 +208,6 @@ $(document).ready(() =>{
       }]
     },
     options: {
-      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
       responsive: false,
       maintainAspectRatio: true,
       aspectRatio: 2,
@@ -265,7 +257,6 @@ $(document).ready(() =>{
       }]
     },
     options: {
-      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
       responsive: false,
       maintainAspectRatio: true,
       aspectRatio: 2,
@@ -296,7 +287,6 @@ const compareMinutesChart = new Chart($('#minutes-chart'), {
       }]
     },
     options: {
-      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
       responsive: false,
       maintainAspectRatio: true,
       aspectRatio: 2,
@@ -328,7 +318,6 @@ const compareStairsChart = new Chart($('#stairs-chart'), {
       }]
     },
     options: {
-      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
       responsive: false,
       maintainAspectRatio: true,
       aspectRatio: 2,
@@ -362,7 +351,6 @@ const friendStepsChart = new Chart($('#friend-steps'), {
       }]
     },
     options: {
-      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
       responsive: false,
       maintainAspectRatio: true,
       aspectRatio: 2,
@@ -398,7 +386,6 @@ const weeklyMinutesChart = new Chart($('#week-minutes-chart'), {
       }]
     },
     options: {
-      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
       responsive: false,
       maintainAspectRatio: true,
       aspectRatio: 2,
@@ -434,7 +421,6 @@ const weeklyStepsChart = new Chart($('#week-steps-chart'), {
       }]
     },
     options: {
-      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
       responsive: false,
       maintainAspectRatio: true,
       aspectRatio: 2,
@@ -470,7 +456,6 @@ const weeklyStairsChart = new Chart($('#week-stairs-chart'), {
       }]
     },
     options: {
-      defaultFontFamily: Chart.defaults.global.defaultFontFamily ='Roboto',
       responsive: false,
       maintainAspectRatio: true,
       aspectRatio: 2,
