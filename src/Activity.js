@@ -82,21 +82,23 @@ class Activity {
   }
 
   getThreeDayStepTrends() {
-    return this.userActivity.reduce((streaks, data, index, activities) => {
-      if (index !== 0 && index !== activities.length - 1 && data.numSteps <= activities[index + 1].numSteps && data.numSteps >= activities[index - 1].numSteps) {
-        streaks.push(activities[index + 1].date)
+    let trends = this.userActivity.reduce((streaks, data, index, activities) => {
+      if (index !== 0 && index !== activities.length - 1 && data.numSteps < activities[index + 1].numSteps && data.numSteps > activities[index - 1].numSteps) {
+        streaks.push(data);
       }
       return streaks;
     }, []);
+    return trends.length;
   }
 
   getThreeDayStairTrends() {
-    return this.userActivity.reduce((streaks, data, index, activities) => {
-      if (index !== 0 && index !== activities.length - 1 && data.flightsOfStairs <= activities[index + 1].flightsOfStairs && data.flightsOfStairs >= activities[index - 1].flightsOfStairs) {
-        streaks.push(activities[index + 1].date)
+    let trends = this.userActivity.reduce((streaks, data, index, activities) => {
+      if (index !== 0 && index !== activities.length - 1 && data.flightsOfStairs < activities[index + 1].flightsOfStairs && data.flightsOfStairs > activities[index - 1].flightsOfStairs) {
+        streaks.push(data);
       }
       return streaks;
     }, []);
+    return trends.length;
   }
 
 

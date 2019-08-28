@@ -31,6 +31,6 @@ describe('SleepRepo', () => {
 
   it('should return all users with sleep quality greater than 3 given week', () => {
     let sleepers = sleepRepo.usersAvgSleepQualityGreaterThree(date);
-    expect(sleepers.length).to.equal(4);
+    expect(sleepers).to.equal(4);
   })
 })

@@ -137,6 +137,7 @@ $(document).ready(() =>{
     $('#avg-hours').text(getAvgHoursSlept());
     $('#quality-sleep').text(getSleepQuality());
     $('#avg-quality').text(getAvgSleepQuality());
+    $('#good-sleepers').text(sleepRepo.usersAvgSleepQualityGreaterThree(date))
     $('#sleep-img').show();
     $('#sleep').slideUp();
   }
@@ -231,6 +232,8 @@ $(document).ready(() =>{
     stepWinnerIndex = activityRepo.getTotalStepWinnerIndex(friendSteps);
 
     $('#miles').text(getMilesWalkedToday());
+    $('#step-increase').text(activity.getThreeDayStepTrends());
+    $('#stair-increase').text(activity.getThreeDayStairTrends());
     $('#step-goal-reached').text(activity.checkStepGoal(date));
     $('#total-step-winner').text(`${friendNames[stepWinnerIndex]} Wins This Week For Most Steps!`);
     $('#activity-img').show();
