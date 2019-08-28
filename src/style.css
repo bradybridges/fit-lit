@@ -93,16 +93,6 @@ img:hover {
   margin-bottom: 40px;
 }
 
-.data-header {
-  text-decoration: underline;
-  text-shadow: 3px -3px 4px #1d3c53;
-}
-
-.friend {
-  font-size: 1.2em;
-  list-style: none;
-}
-
 #hydration-container, #sleep-quality-data-container {
   display: flex;
   justify-content: space-around;
@@ -126,6 +116,17 @@ img:hover {
   display: flex;
   flex-direction: column;
   margin: 10px auto;
+}
+
+.data-header {
+  text-decoration: underline;
+  text-shadow: 3px -3px 4px #1d3c53;
+}
+
+.friend {
+  font-size: 1.2em;
+  list-style: none;
+  margin-bottom: 10px;
 }
 
 .flex-wrap {
