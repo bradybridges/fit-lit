@@ -24,5 +24,5 @@ Comp
 
 Project
 
-![Project](../images/to/screencapture.png)
+![Project](https://github.com/bradybridges/fit-lit/blob/readme/images/screencapture.png)
 
