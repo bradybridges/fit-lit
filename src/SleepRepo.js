@@ -13,9 +13,8 @@ class SleepRepo {
 
   findUsersWithMostSleep(date) {
     const sleepFigures = this.sleepData.filter(sleepObj => sleepObj.date === date);
-    sleepFigures.sort((a,b) => a.hoursSlept - b.hoursSlept);
+    sleepFigures.sort((a, b) => a.hoursSlept - b.hoursSlept);
     const max = sleepFigures[sleepFigures.length - 1].hoursSlept;
-    
     return sleepFigures.filter(sleeper => sleeper.hoursSlept === max);
   }
 

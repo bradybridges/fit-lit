@@ -37,12 +37,7 @@ describe('ActivityRepo', () => {
   })
 
   it('should return index of most steps from an array', () => {
-    expect(activityRepo.getTotalStepWinnerIndex([10,25,2])).to.equal(1);
+    expect(activityRepo.getTotalStepWinnerIndex([10, 25, 2])).to.equal(1);
   })
-
-  // it('should   ', () => {
-  //   // make one
-  // })
-
 
 })

@@ -2,7 +2,6 @@ const chai = require('chai');
 const expect = chai.expect;
 const mockSleep = require('../data/mockSleep');
 const SleepRepo = require('../src/SleepRepo');
-const UserRepo = require('../src/UserRepo');
 const mockUsers = require('../data/mockUsers');
 
 describe('SleepRepo', () => { 
