@@ -98,9 +98,7 @@ class Activity {
     return trends.length;
   }
 
-
 }
-
 
 if (typeof module !== 'undefined') {
   module.exports = Activity;

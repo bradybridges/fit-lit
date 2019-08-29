@@ -1,6 +1,5 @@
 const chai = require('chai');
 const expect = chai.expect;
-
 const activityData = require('../data/mockActivity');
 const userData = require('../data/mockUsers');
 const ActivityRepo = require('../src/ActivityRepo');
