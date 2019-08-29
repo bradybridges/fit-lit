@@ -461,10 +461,14 @@ $(document).ready(() =>{
   $('#user-selection-button').prop('disabled' , true);
   $('#user-id-input').keyup(function() {
     let value = $(this).val();
-    if( value.match(/[0-9]/g) !== null && Number(value) <= 50 ) {
-      $('#user-selection-button').prop('disabled' , false);
+    if( value.match(/[0-9]/g) !== null && Number(value) <= 50 && Number(value) > 0 ) {
+      let button = $('#user-selection-button').prop('disabled' , false);
+      button.removeClass('disabled-button');
+      button.addClass('enabled-button');
     } else {
-      $('#user-selection-button').prop('disabled', true)
+      let button = $('#user-selection-button').prop('disabled', true);
+      button.removeClass('enabled-button');
+      button.addClass('disabled-button');
     }
   });
   $('#user-selection-button').click(function() {

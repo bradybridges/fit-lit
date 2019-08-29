@@ -18,3 +18,11 @@ The main learing goals for this project include:
 
 ## Screenshots
 
+Comp
+
+![Comp](https://github.com/bradybridges/fit-lit/blob/readme/images/comp.png)
+
+Project
+
+![Project](https://github.com/bradybridges/fit-lit/blob/readme/images/screencapture.png)
+
