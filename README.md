@@ -20,7 +20,7 @@ The main learing goals for this project include:
 
 Comp
 
-![Comp](../images/comp.png)
+![Comp](https://github.com/bradybridges/fit-lit/blob/readme/images/comp.png)
 
 Project
 
