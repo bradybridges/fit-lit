@@ -63,13 +63,22 @@ figure {
 }
 
 #user-selection-button {
-  background-color: #1d3d53;
   border-radius: 4px;
-  border: solid black 1px;
-  color: #fff;
   font-size: 1em;
   height: 50px;
   width: 100px;
+}
+
+.enabled-button {
+  background-color: #1d3d53;
+  border: solid black 1px;
+  color: #fff;
+}
+
+.disabled-button {
+  background-color: #ccc;
+  border: solid white 1px;
+  color: #fff;
 }
 
 #user-selection-button:hover {
