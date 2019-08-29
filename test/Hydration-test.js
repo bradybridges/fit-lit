@@ -19,7 +19,7 @@ describe('Hydration', () => {
     expect(hydration.getAverageFluidOunces()).to.equal(33);
   });
 
-  it('should be able to find ounces consumed on specific date' , () => {
+  it('should be able to find ounces consumed on specific date', () => {
   
     expect(hydration.getFluidOuncesOnDay(date)).to.equal(30);
   });

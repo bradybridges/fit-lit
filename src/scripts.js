@@ -2,13 +2,10 @@ $(document).ready(() =>{
  
   let user, userRepo, hydration, hydrationRepo, sleep, sleepRepo, activity, activityRepo, date, id, today, friends, friendSteps, friendNames, stepWinnerIndex;
 
-  id = null;
-  
-  
   //functions
   //data fns
   const createData = () => {
-    today = new Date().toString().split(' ').slice(0,4).join(' ');
+    today = new Date().toString().split(' ').slice(0, 4).join(' ');
     date = new Date().toISOString().replace('-', '/').split('T')[0].replace('-', '/');
     userRepo = new UserRepo(userData);
     hydrationRepo = new HydrationRepo(hydrationData);
@@ -89,7 +86,7 @@ $(document).ready(() =>{
   }
 
   Chart.defaults.global.defaultFontColor = 'rgb(255,255,255)';
-  Chart.defaults.global.defaultFontFamily ='Roboto';
+  Chart.defaults.global.defaultFontFamily = 'Roboto';
 
   const appendHydrationChart = () => {
     const weeklyHydrationChart = new Chart($('#water-week-chart'), {
@@ -272,92 +269,92 @@ $(document).ready(() =>{
 
     const compareMinutesChart = new Chart($('#minutes-chart'), {
       type: 'horizontalBar',
-        data: {
-          labels: ['You', 'User Average'],
-          datasets: [{
-            label: 'Minutes',
-            data: [activity.getMinutesActive(date), activityRepo.getAvgMinActiveAllUsers(date)],
-            backgroundColor: 'rgba(240, 147, 43, .5)',
-            borderColor: 'rgba(34, 166, 179, 1)',
-            borderWidth: 2
-          }]
-        },
-        options: {
-          responsive: false,
-          maintainAspectRatio: true,
-          aspectRatio: 2,
-          scales: {
-            yAxes: [{
-              gridLines: {
-                display: false
-              },
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-        }
-    });
-
-    const compareStairsChart = new Chart($('#stairs-chart'), {
-      type: 'horizontalBar',
-        data: {
-          labels: ['You', 'User Average', 'Your Record'],
-          datasets: [{
-            label: 'Flights of Stairs',
-            data: [activity.getFlightsOfStairs(date), activityRepo.getAvgStairsAllUsers(date), activity.getUserStairRecord()],
-            backgroundColor: 'rgba(240, 147, 43, .5)',
-            borderColor: 'rgba(34, 166, 179, 1)',
-            borderWidth: 2
-          }]
-        },
-        options: {
-          responsive: false,
-          maintainAspectRatio: true,
-          aspectRatio: 2,
-          scales: {
-            yAxes: [{
-              gridLines: {
-                display: false
-              },
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-        }
-    });
-
-    const friendStepsChart = new Chart($('#friend-steps'), {
-      type: 'horizontalBar',
-        data: {
-          labels: friendNames,
-          datasets: [{
-            label: 'Steps',
-            data: friendSteps,
-            backgroundColor: 'rgba(240, 147, 43, .5)',
-            borderColor: 'rgba(34, 166, 179, 1)',
-            borderWidth: 2
-          }]
-        },
-        options: {
-          responsive: false,
-          maintainAspectRatio: true,
-          aspectRatio: 2,
-          scales: {
-            yAxes: [{
-              gridLines: {
-                display: false
-              },
-              ticks: {
-                beginAtZero: true
+      data: {
+        labels: ['You', 'User Average'],
+        datasets: [{
+          label: 'Minutes',
+          data: [activity.getMinutesActive(date), activityRepo.getAvgMinActiveAllUsers(date)],
+          backgroundColor: 'rgba(240, 147, 43, .5)',
+          borderColor: 'rgba(34, 166, 179, 1)',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: false,
+        maintainAspectRatio: true,
+        aspectRatio: 2,
+        scales: {
+          yAxes: [{
+            gridLines: {
+              display: false
+            },
+            ticks: {
+              beginAtZero: true
             }
           }]
         }
       }
     });
 
-  const weeklyMinutesChart = new Chart($('#week-minutes-chart'), {
+    const compareStairsChart = new Chart($('#stairs-chart'), {
+      type: 'horizontalBar',
+      data: {
+        labels: ['You', 'User Average', 'Your Record'],
+        datasets: [{
+          label: 'Flights of Stairs',
+          data: [activity.getFlightsOfStairs(date), activityRepo.getAvgStairsAllUsers(date), activity.getUserStairRecord()],
+          backgroundColor: 'rgba(240, 147, 43, .5)',
+          borderColor: 'rgba(34, 166, 179, 1)',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: false,
+        maintainAspectRatio: true,
+        aspectRatio: 2,
+        scales: {
+          yAxes: [{
+            gridLines: {
+              display: false
+            },
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+
+    const friendStepsChart = new Chart($('#friend-steps'), {
+      type: 'horizontalBar',
+      data: {
+        labels: friendNames,
+        datasets: [{
+          label: 'Steps',
+          data: friendSteps,
+          backgroundColor: 'rgba(240, 147, 43, .5)',
+          borderColor: 'rgba(34, 166, 179, 1)',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: false,
+        maintainAspectRatio: true,
+        aspectRatio: 2,
+        scales: {
+          yAxes: [{
+            gridLines: {
+              display: false
+            },
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+
+    const weeklyMinutesChart = new Chart($('#week-minutes-chart'), {
       type: 'line',
       data: {
         labels: ['6 Days', '5 Days', '4 Days', '3 Days', '2 Days', 'Yesterday', 'Today'],
@@ -452,17 +449,13 @@ $(document).ready(() =>{
     return activity.getMilesWalked(date);
   }
 
-  //header
-  // $('.welcome').hide();
-  // $('.today').hide();
-
   //main
   //User Selection 
-  $('#user-selection-button').prop('disabled' , true);
+  $('#user-selection-button').prop('disabled', true);
   $('#user-id-input').keyup(function() {
     let value = $(this).val();
-    if( value.match(/[0-9]/g) !== null && Number(value) <= 50 && Number(value) > 0 ) {
-      let button = $('#user-selection-button').prop('disabled' , false);
+    if ( value.match(/[0-9]/g) !== null && Number(value) <= 50 && Number(value) > 0 ) {
+      let button = $('#user-selection-button').prop('disabled', false);
       button.removeClass('disabled-button');
       button.addClass('enabled-button');
     } else {
@@ -471,6 +464,7 @@ $(document).ready(() =>{
       button.addClass('disabled-button');
     }
   });
+
   $('#user-selection-button').click(function() {
     id = Number($(this).siblings()[1].value);
     $('#user-id-input').val('');
@@ -500,12 +494,10 @@ $(document).ready(() =>{
     $('#sleep').slideToggle(500);
   });
 
-  //sleep charts
-  
   //activity
   $('#activity').hide();
   $('#activity-img').click(function () {
-      $('#activity').slideToggle(500);
+    $('#activity').slideToggle(500);
   });
 
 });

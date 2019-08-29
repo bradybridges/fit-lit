@@ -1,6 +1,6 @@
 # FitLit 
 
-### Created By: Brady Bridges @bradybridges & Amy Rippeto @aripp2
+### Created By: Brady Bridges ([bradybridges](https://github.com/bradybridges)) & Amy Rippeto ([aripp2](https://github.com/aripp2))
 
 ### Turing School of Software and Design Front End Engineering Program
 
@@ -16,13 +16,7 @@ The main learing goals for this project include:
 - Utilizing npm 
 - Create a UX/UI friendly dashboard to display user information
 
-## Screenshots
-
-Comp
-
-![Comp](https://github.com/bradybridges/fit-lit/blob/readme/images/comp.png)
-
-Project
+## Screenshot
 
 ![Project](https://github.com/bradybridges/fit-lit/blob/readme/images/screencapture.png)
 

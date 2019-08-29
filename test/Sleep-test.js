@@ -1,13 +1,12 @@
 const chai = require('chai');
 const expect = chai.expect;
 const sleepData = require('../data/mockSleep');
-
 const SleepRepo = require('../src/SleepRepo');
 const Sleep = require('../src/Sleep');
  
 describe('Sleep', () => {
 
-  let sleepRepo, userSleep, sleeper, date;
+  let sleepRepo, sleeper, date;
 
   beforeEach(() => {
     sleepRepo = new SleepRepo(sleepData);

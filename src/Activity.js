@@ -37,17 +37,14 @@ class Activity {
     if (steps >= this.user.dailyStepGoal) {
       return `You reached your step goal for today!!!`;
     } else {
-      return `You didn\'t take enough steps to reach your goal for today`;
+      return `You didn't take enough steps to reach your goal for today`;
     }
   }
 
   getDaysStepGoalReached() {
-    // I would like to be able to eliminate days that are in the future if we can
-    // Also consider how we would like to display this data on the dom
-    const days = this.userActivity.filter(data => {
+    return this.userActivity.filter(data => {
       return data.numSteps >= this.user.dailyStepGoal
-    });
-    return days.length;
+    }).length;
   }
 
   getUserStairRecord() {
@@ -101,9 +98,7 @@ class Activity {
     return trends.length;
   }
 
-
 }
-
 
 if (typeof module !== 'undefined') {
   module.exports = Activity;

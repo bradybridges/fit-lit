@@ -4,19 +4,17 @@ class Sleep {
   }
 
   calculateAverageHoursSlept() {
-    let sleepTotal = this.sleepData.reduce((acc, sleepObj) => {
+    return +(this.sleepData.reduce((acc, sleepObj) => {
       acc += sleepObj.hoursSlept;
       return acc;
-    }, 0);
-    return  +(sleepTotal / this.sleepData.length).toFixed(2);  
+    }, 0) / this.sleepData.length).toFixed(2);  
   }
 
   calculateAverageSleepQuality() {
-    let qualityTotal = this.sleepData.reduce((acc, sleepObj) => {
+    return +(this.sleepData.reduce((acc, sleepObj) => {
       acc += sleepObj.sleepQuality;
       return acc;
-    }, 0);
-    return +(qualityTotal / this.sleepData.length).toFixed(2);
+    }, 0) / this.sleepData.length).toFixed(2);
   }
 
   getHoursSlept(date) {
@@ -33,25 +31,15 @@ class Sleep {
   }
 
   getSleepHoursForWeek(date) {
-    const startIndex = this.sleepData.findIndex(sleepObj => sleepObj.date === date) - 6;
-    const sleepHours = this.sleepData.reduce((acc, sleepObj, index) => {
-      if(index >= startIndex && index <= startIndex + 6) {
-        acc.push({['x']: sleepObj.date, ['y']: sleepObj.hoursSlept});
-      }
-      return acc;
-    }, []);
-    return sleepHours;  
+    const today = this.sleepData.findIndex(data => data.date === date);
+    const week = this.sleepData.slice(today - 6, today + 1);
+    return week.map(day => ({['x']: day.date, ['y']: day.hoursSlept}));
   } 
 
   getSleepQualityForWeek(date) {
-    const startIndex = this.sleepData.findIndex(sleepObj => sleepObj.date === date) - 6;
-    const sleepQualities = this.sleepData.reduce((acc, sleepObj, index) => {
-      if(index >= startIndex && index <= startIndex + 6) {
-        acc.push({['x']: sleepObj.date, ['y']: sleepObj.sleepQuality});
-      }
-      return acc;
-    }, []);
-    return sleepQualities;
+    const today = this.sleepData.findIndex(data => data.date === date);
+    const week = this.sleepData.slice(today - 6, today + 1);
+    return week.map(day => ({['x']: day.date, ['y']: day.sleepQuality}));
   } 
 
 }
