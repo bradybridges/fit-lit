@@ -11,6 +11,10 @@ body {
   text-align: center;
 }
 
+main {
+  margin: 20px;
+}
+
 h1 {
   background-color: #1d3e53;
   font-size: 5.5em;
@@ -132,4 +136,41 @@ img:hover {
 .flex-wrap {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1250px) {
+  figure {
+    margin: 50px 0;
+  }
+
+  #activity {
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: unset;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #hydration-container, #sleep-quality-data-container, #sleep-hours-data-container {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+  #user-selection {
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #user-id-input {
+    margin-bottom: 10px;
+  }
+
+  #user-selection-button {
+    width: auto;
+  }
+
 }
